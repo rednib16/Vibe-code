@@ -214,7 +214,7 @@
     .nav-dropdown {
       display: none;
       position: absolute;
-      top: calc(100% + 16px);
+      top: 100%;
       left: 50%;
       transform: translateX(-50%);
       background: var(--white);
@@ -223,8 +223,17 @@
       box-shadow: 0 8px 32px rgba(0,0,0,0.10);
       min-width: 180px;
       list-style: none;
-      padding: 8px 0;
+      padding: 16px 0 8px;
       z-index: 200;
+    }
+
+    /* Bridge the gap so the dropdown doesn't close when moving mouse down */
+    .nav-dropdown::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: 0; right: 0;
+      height: 12px;
     }
 
     .has-dropdown:hover .nav-dropdown { display: block; }
@@ -948,7 +957,7 @@
       <li><a href="#vitality">Vitality Money</a></li>
     </ul>
     <div class="nav-right">
-      <a class="btn-nav" href="https://www.discovery.co.za/bank" target="_blank" rel="noopener">Open Account</a>
+      <a class="btn-nav" href="https://www.discovery.co.za/bank">Open Account</a>
       <button class="dark-toggle" title="Toggle dark mode" onclick="toggleDark()">🌙</button>
       <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Open menu">
         <span></span><span></span><span></span>
@@ -973,7 +982,7 @@
         </ul>
       </li>
       <li class="mobile-nav-item"><a class="mobile-nav-link" href="#vitality" onclick="closeMobileNav()">Vitality Money</a></li>
-      <li class="mobile-nav-cta-wrap"><a class="mobile-nav-cta" href="https://www.discovery.co.za/bank" target="_blank" rel="noopener">Open Account</a></li>
+      <li class="mobile-nav-cta-wrap"><a class="mobile-nav-cta" href="https://www.discovery.co.za/bank">Open Account</a></li>
     </ul>
   </div>
 
@@ -983,7 +992,7 @@
       <h1>The Independent Guide<br/>to <span class="h1-accent">Discovery Bank</span></h1>
       <p>Honest reviews, real fee comparisons, and clear explanations of Vitality Money rewards. Everything you need to decide if Discovery Bank is right for you.</p>
       <div class="hero-btns">
-        <a class="btn-primary" href="https://www.discovery.co.za/bank" target="_blank" rel="noopener">Open Your Account &nbsp;→</a>
+        <a class="btn-primary" href="https://www.discovery.co.za/bank">Open Your Account &nbsp;→</a>
         <a class="btn-secondary" href="#review">Read Full Review</a>
       </div>
       <p class="hero-disclaimer">Not affiliated with Discovery Limited. We may earn a referral reward.</p>
@@ -1328,7 +1337,7 @@
         <h2>Ready to switch to Discovery Bank?</h2>
         <p>Use referral code HDQ001 when you sign up. You earn up to 5,000 Discovery Miles, and so do we.</p>
         <div class="bottom-cta-btns">
-          <a class="btn-primary" href="https://www.discovery.co.za/bank" target="_blank" rel="noopener">Open Your Account &nbsp;→</a>
+          <a class="btn-primary" href="https://www.discovery.co.za/bank">Open Your Account &nbsp;→</a>
           <a class="bottom-cta-link" href="#tiers">Compare cards first</a>
         </div>
         <p class="bottom-disclaimer">We earn Discovery Miles when you sign up with our code. <a href="#">This does not affect our recommendations.</a></p>
