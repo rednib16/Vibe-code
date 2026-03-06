@@ -1248,16 +1248,37 @@
       document.body.style.filter = dark ? 'invert(1) hue-rotate(180deg)' : '';
     }
 
-    // Email subscribe (no-op demo)
-    document.querySelector('.btn-subscribe').addEventListener('click', function() {
+    // Email subscribe → Google Sheets via Apps Script web app
+    // Replace APPS_SCRIPT_URL with your deployed web app URL (see setup instructions)
+    const APPS_SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+
+    document.querySelector('.btn-subscribe').addEventListener('click', async function() {
       const input = document.querySelector('.email-input');
-      if (input.value.includes('@')) {
-        input.value = '';
-        const t = document.getElementById('toast');
-        t.textContent = '✓ You\'re subscribed!';
-        t.classList.add('show');
-        setTimeout(() => { t.classList.remove('show'); t.textContent = '✓ Code HDQ001 copied to clipboard'; }, 2800);
+      const email = input.value.trim();
+      if (!email.includes('@')) return;
+
+      const btn = this;
+      btn.disabled = true;
+      btn.textContent = 'Saving…';
+
+      try {
+        await fetch(APPS_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, timestamp: new Date().toISOString() })
+        });
+      } catch (e) {
+        // no-cors mode: fetch always resolves, errors are network-level only
       }
+
+      input.value = '';
+      btn.disabled = false;
+      btn.textContent = 'Subscribe';
+      const t = document.getElementById('toast');
+      t.textContent = '✓ You\'re subscribed!';
+      t.classList.add('show');
+      setTimeout(() => { t.classList.remove('show'); t.textContent = '✓ Code HDQ001 copied to clipboard'; }, 2800);
     });
   </script>
 </body>
