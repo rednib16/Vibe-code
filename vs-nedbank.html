@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discovery Bank vs Nedbank: The Honest Comparison (2025)</title>
+  <meta name="description" content="Discovery Bank vs Nedbank — fees, Greenbacks vs Discovery Miles, savings rates, and our honest verdict on which bank is better for you in 2025." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --accent: #1447E6; --accent-dark: #0F36B8; --accent-light: #EEF2FF; --accent-border: #BFDBFE; --dark-bg: #0D1B2A; --page-bg: #F5F5F5; --white: #FFFFFF; --text: #0A1628; --text-muted: #6B7280; --text-light: #9CA3AF; --border: #E5E7EB; --gold: #C88B1A; --disc-green: #166534; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text); line-height: 1.6; font-size: 15px; }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; }
+    .nav-logo { font-size: 1.15rem; font-weight: 800; text-decoration: none; letter-spacing: -0.3px; }
+    .nav-logo .logo-accent { color: var(--accent); } .nav-logo .logo-dark { color: var(--text); }
+    .nav-center { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-center a { font-size: 0.875rem; color: var(--text); text-decoration: none; font-weight: 400; }
+    .nav-center a:hover { color: var(--accent); }
+    .nav-right { display: flex; align-items: center; gap: 14px; }
+    .btn-nav { background: var(--accent); color: var(--white); text-decoration: none; padding: 9px 20px; border-radius: 8px; font-size: 0.875rem; font-weight: 600; }
+    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px 0; flex-direction: column; gap: 5px; align-items: center; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+    .has-dropdown { position: relative; }
+    .nav-dropdown { display: none; position: absolute; top: calc(100% + 16px); left: 50%; transform: translateX(-50%); background: var(--white); border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 8px 32px rgba(0,0,0,0.10); min-width: 180px; list-style: none; padding: 8px 0; z-index: 200; }
+    .has-dropdown:hover .nav-dropdown { display: block; }
+    .nav-dropdown li a { display: block; padding: 10px 18px; font-size: 0.875rem; color: var(--text); text-decoration: none; white-space: nowrap; }
+    .nav-dropdown li a:hover { background: var(--accent-light); color: var(--accent); }
+    .nav-dropdown li a.active { color: var(--accent); font-weight: 600; }
+    .mobile-nav { display: none; position: fixed; top: 60px; left: 0; right: 0; bottom: 0; background: var(--white); z-index: 98; overflow-y: auto; border-top: 1px solid var(--border); }
+    .mobile-nav.open { display: block; }
+    .mobile-nav-list { list-style: none; padding: 0; }
+    .mobile-nav-item { border-bottom: 1px solid var(--border); }
+    .mobile-nav-link { display: block; padding: 16px 24px; font-size: 1rem; font-weight: 500; color: var(--text); text-decoration: none; }
+    .mobile-nav-toggle { width: 100%; background: none; border: none; padding: 16px 24px; font-size: 1rem; font-weight: 500; color: var(--text); text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: inherit; }
+    .mobile-nav-sub { list-style: none; background: var(--page-bg); padding: 4px 0 12px; }
+    .mobile-nav-sub li a { display: block; padding: 10px 24px 10px 40px; font-size: 0.9rem; color: var(--text-muted); text-decoration: none; }
+    .mobile-nav-cta-wrap { padding: 20px 24px 0; }
+    .mobile-nav-cta { display: block; background: var(--accent); color: var(--white); text-decoration: none; padding: 14px 24px; border-radius: 8px; font-size: 0.95rem; font-weight: 600; text-align: center; }
+    @media (max-width: 768px) { .nav-center { display: none; } nav { padding: 0 20px; } .nav-hamburger { display: flex; } .nav-right .btn-nav { display: none; } }
+    .page-wrap { max-width: 860px; margin: 0 auto; padding: 48px 40px 80px; }
+    @media (max-width: 600px) { .page-wrap { padding: 32px 20px 60px; } }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--text-muted); margin-bottom: 14px; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--text-muted); text-decoration: none; } .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb-sep { color: var(--text-light); } .breadcrumb-current { color: var(--text); font-weight: 500; }
+    .last-updated { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 20px; }
+    .cmp-title { font-size: clamp(1.7rem, 4vw, 2.5rem); font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 32px; }
+    .verdict-box { border-left: 4px solid var(--gold); padding: 24px 28px; margin-bottom: 52px; background: #FFFBEB; border-radius: 0 10px 10px 0; }
+    .verdict-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+    .verdict-badge { background: var(--border); color: var(--text-muted); padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; text-transform: none; letter-spacing: 0; font-weight: 500; }
+    .verdict-summary { font-size: 1.05rem; font-weight: 700; line-height: 1.55; margin-bottom: 12px; }
+    .verdict-body { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; }
+    .cmp-section { margin-bottom: 52px; }
+    .cmp-section-title { font-size: 1.25rem; font-weight: 800; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--border); }
+    .cmp-table-wrap { overflow-x: auto; }
+    table.cmp-detail { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    table.cmp-detail th { padding: 12px 16px; text-align: left; font-size: 0.82rem; font-weight: 700; border-bottom: 2px solid var(--border); }
+    table.cmp-detail th:not(:first-child) { text-align: center; min-width: 140px; }
+    table.cmp-detail th.col-disc { color: var(--disc-green); } table.cmp-detail th.col-other { color: var(--accent); }
+    table.cmp-detail td { padding: 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    table.cmp-detail td:not(:first-child) { text-align: center; }
+    table.cmp-detail td:first-child { font-weight: 500; min-width: 160px; }
+    table.cmp-detail tbody tr:last-child td { border-bottom: none; }
+    .td-note { display: block; font-size: 0.775rem; color: var(--text-muted); margin-top: 4px; font-weight: 400; line-height: 1.4; }
+    .win { font-weight: 600; } .win::after { content: ' ●'; color: var(--accent); font-size: 0.65rem; vertical-align: middle; }
+    .disc-win { font-weight: 600; } .disc-win::after { content: ' ●'; color: var(--disc-green); font-size: 0.65rem; vertical-align: middle; }
+    .verdict-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 52px; }
+    @media (max-width: 600px) { .verdict-cards { grid-template-columns: 1fr; } }
+    .verdict-card { border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+    .verdict-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 14px; }
+    .verdict-card ul { list-style: none; padding: 0; }
+    .verdict-card ul li { font-size: 0.85rem; color: var(--text-muted); padding: 7px 0; border-bottom: 1px solid var(--border); display: flex; gap: 8px; align-items: flex-start; line-height: 1.4; }
+    .verdict-card ul li:last-child { border-bottom: none; }
+    .cta-box { background: var(--dark-bg); border-radius: 14px; padding: 40px 36px; text-align: center; margin-bottom: 52px; }
+    .cta-box h2 { font-size: 1.3rem; font-weight: 800; color: var(--white); margin-bottom: 10px; }
+    .cta-box p { font-size: 0.875rem; color: rgba(255,255,255,0.6); max-width: 460px; margin: 0 auto 26px; line-height: 1.6; }
+    .cta-btns { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .btn-primary { background: var(--accent); color: var(--white); text-decoration: none; padding: 13px 24px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; }
+    .cta-disc { font-size: 0.75rem; color: rgba(255,255,255,0.3); margin-top: 16px; }
+    footer { background: var(--dark-bg); padding: 56px 40px 0; }
+    .footer-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 1.3fr 1fr; gap: 40px; padding-bottom: 48px; }
+    @media (max-width: 768px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .footer-inner { grid-template-columns: 1fr; } footer { padding: 40px 20px 0; } }
+    .footer-brand .footer-logo { font-size: 1.1rem; font-weight: 800; text-decoration: none; margin-bottom: 12px; display: block; }
+    .footer-brand .footer-logo .logo-accent { color: var(--accent); } .footer-brand .footer-logo .logo-dark { color: var(--white); }
+    .footer-brand p { font-size: 0.825rem; color: rgba(255,255,255,0.45); line-height: 1.6; }
+    .footer-col h4 { font-size: 0.72rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; } .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { font-size: 0.845rem; color: rgba(255,255,255,0.5); text-decoration: none; }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-bottom { max-width: 1080px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.08); padding: 20px 0 24px; }
+    .footer-bottom p { font-size: 0.775rem; color: rgba(255,255,255,0.3); line-height: 1.65; }
+    .footer-bottom p + p { margin-top: 6px; }
+    @media (max-width: 600px) { .cta-box { padding: 28px 20px; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="index.html"><span class="logo-accent">Bank</span><span class="logo-dark"> Reviews ZA</span></a>
+    <ul class="nav-center">
+      <li><a href="index.html#review">Review</a></li>
+      <li><a href="index.html#tiers">Cards</a></li>
+      <li class="has-dropdown">
+        <a href="index.html#compare">Compare</a>
+        <ul class="nav-dropdown">
+          <li><a href="vs-capitec.html">vs Capitec</a></li>
+          <li><a href="vs-fnb.html">vs FNB</a></li>
+          <li><a href="vs-nedbank.html" class="active">vs Nedbank</a></li>
+          <li><a href="vs-standard-bank.html">vs Standard Bank</a></li>
+          <li><a href="vs-absa.html">vs Absa</a></li>
+          <li><a href="vs-tymebank.html">vs TymeBank</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#vitality">Vitality Money</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="btn-nav" href="https://www.discovery.co.za/bank" target="_blank" rel="noopener">Open Account</a>
+      <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item"><a class="mobile-nav-link" href="index.html#review">Review</a></li>
+      <li class="mobile-nav-item"><a class="mobile-nav-link" href="index.html#tiers">Cards</a></li>
+      <li class="mobile-nav-item">
+        <button class="mobile-nav-toggle" onclick="toggleMobileSub(this)">Compare <span>▾</span></button>
+        <ul class="mobile-nav-sub" style="display:none">
+          <li><a href="vs-capitec.html">vs Capitec</a></li><li><a href="vs-fnb.html">vs FNB</a></li>
+          <li><a href="vs-nedbank.html">vs Nedbank</a></li><li><a href="vs-standard-bank.html">vs Standard Bank</a></li>
+          <li><a href="vs-absa.html">vs Absa</a></li><li><a href="vs-tymebank.html">vs TymeBank</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item"><a class="mobile-nav-link" href="index.html#vitality">Vitality Money</a></li>
+      <li class="mobile-nav-cta-wrap"><a class="mobile-nav-cta" href="https://www.discovery.co.za/bank" target="_blank" rel="noopener">Open Account</a></li>
+    </ul>
+  </div>
+
+  <div class="page-wrap">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span class="breadcrumb-sep">›</span>
+      <a href="index.html#compare">Compare</a><span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">vs Nedbank</span>
+    </div>
+    <div class="last-updated">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Last updated: 1 March 2025
+    </div>
+
+    <h1 class="cmp-title">Discovery Bank vs Nedbank:<br/>The Honest Comparison (2025)</h1>
+
+    <div class="verdict-box">
+      <div class="verdict-label">Quick Verdict <span class="verdict-badge">Discovery wins</span></div>
+      <p class="verdict-summary">Discovery wins on savings rates, rewards depth, and fee discount potential. Nedbank wins on branch access, green banking initiatives, and its Greenbacks retail cashback programme.</p>
+      <p class="verdict-body">Nedbank has made significant strides in digital banking but remains a traditional branch-based institution at heart. Discovery's Vitality Money programme offers meaningfully better savings rates and the ability to reduce fees to R0 — advantages Nedbank cannot match. However, if you value in-person banking, a broader product suite, or want to earn Greenbacks at major retailers, Nedbank remains a solid choice.</p>
+    </div>
+
+    <div class="cmp-section">
+      <h2 class="cmp-section-title">Fees</h2>
+      <div class="cmp-table-wrap">
+        <table class="cmp-detail">
+          <thead><tr><th>Feature</th><th class="col-disc">Discovery Bank</th><th class="col-other">Nedbank</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Monthly account fee<span class="td-note">Nedbank Pay-As-You-Use from R5.95; Savvy Bundle from R99; Savvy Plus from R169.</span></td>
+              <td>R115 to R495<span class="td-note">Up to 75% discount with Vitality</span></td>
+              <td>R5.95 to R499</td>
+            </tr>
+            <tr>
+              <td>Card swipe / tap fee</td>
+              <td class="disc-win">Included in bundle</td>
+              <td>Included in bundle</td>
+            </tr>
+            <tr>
+              <td>ATM withdrawal (own)</td>
+              <td>R4.00 to R8.50</td>
+              <td>R8.00 to R12.00</td>
+            </tr>
+            <tr>
+              <td>EFT payment</td>
+              <td class="disc-win">Included in bundle</td>
+              <td>R3.00 to R8.00</td>
+            </tr>
+            <tr>
+              <td>Immediate payment</td>
+              <td>R10.00</td>
+              <td>R10.00</td>
+            </tr>
+            <tr>
+              <td>Minimum monthly fee (best case)</td>
+              <td class="disc-win">R0 with Diamond Vitality Money</td>
+              <td>R5.95 PAYU (no fee elimination)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="cmp-section">
+      <h2 class="cmp-section-title">Savings &amp; Interest Rates</h2>
+      <div class="cmp-table-wrap">
+        <table class="cmp-detail">
+          <thead><tr><th>Feature</th><th class="col-disc">Discovery Bank</th><th class="col-other">Nedbank</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>On-demand savings rate</td>
+              <td class="disc-win">Up to 7.35% p.a.<span class="td-note">Increases with Vitality Money status</span></td>
+              <td>Up to 6.5% p.a.<span class="td-note">Nedbank JustSave account</span></td>
+            </tr>
+            <tr>
+              <td>Fixed deposit rate</td>
+              <td>Up to 9.5% p.a.</td>
+              <td>Up to 9.25% p.a.</td>
+            </tr>
+            <tr>
+              <td>Transaction account interest</td>
+              <td class="disc-win">Up to 6.5% on cheque balance</td>
+              <td>Minimal</td>
+            </tr>
+            <tr>
+              <td>Interest improvement mechanism</td>
+              <td class="disc-win">Vitality Money status</td>
+              <td>None</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="cmp-section">
+      <h2 class="cmp-section-title">Rewards &amp; Cashback</h2>
+      <div class="cmp-table-wrap">
+        <table class="cmp-detail">
+          <thead><tr><th>Feature</th><th class="col-disc">Discovery Bank</th><th class="col-other">Nedbank</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Rewards programme</td>
+              <td class="disc-win">Discovery Miles + Vitality Money</td>
+              <td>Greenbacks</td>
+            </tr>
+            <tr>
+              <td>Max cashback rate</td>
+              <td class="disc-win">Up to 20% at Discovery partners</td>
+              <td>Up to 2% via Greenbacks</td>
+            </tr>
+            <tr>
+              <td>Rewards at major retailers</td>
+              <td>Discovery partners only</td>
+              <td class="win">Checkers, Shoprite, Pick n Pay<span class="td-note">Greenbacks earnable at many stores</span></td>
+            </tr>
+            <tr>
+              <td>Fee discounts</td>
+              <td class="disc-win">Up to 75% via Vitality Money</td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <td>Health-linked rewards</td>
+              <td class="disc-win">Yes — Vitality</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Travel perks</td>
+              <td>Lounge access (Black/Purple cards)</td>
+              <td>Lounge access (Platinum Amex)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="cmp-section">
+      <h2 class="cmp-section-title">Products &amp; Access</h2>
+      <div class="cmp-table-wrap">
+        <table class="cmp-detail">
+          <thead><tr><th>Feature</th><th class="col-disc">Discovery Bank</th><th class="col-other">Nedbank</th></tr></thead>
+          <tbody>
+            <tr><td>Physical branches</td><td>Digital only</td><td class="win">700+ branches &amp; outlets</td></tr>
+            <tr><td>Credit card</td><td class="disc-win">Yes — Miles earning</td><td>Yes — Greenbacks earning</td></tr>
+            <tr><td>Home loan</td><td>No</td><td class="win">Yes</td></tr>
+            <tr><td>Investment access</td><td class="disc-win">EasyEquities integration</td><td>Nedbank Investment Services</td></tr>
+            <tr><td>Solar / green banking</td><td>No</td><td class="win">Solar finance &amp; green home loans</td></tr>
+            <tr><td>App rating (App Store)</td><td class="disc-win">4.7 / 5</td><td>4.3 / 5</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="cmp-section">
+      <h2 class="cmp-section-title">Who Should Choose Which Bank?</h2>
+      <div class="verdict-cards">
+        <div class="verdict-card">
+          <h3>✦ Choose Discovery Bank if…</h3>
+          <ul>
+            <li><span>→</span> You want the best on-demand savings rate available</li>
+            <li><span>→</span> You're in the Discovery ecosystem and want integrated rewards</li>
+            <li><span>→</span> You want to reduce fees to R0 through engagement</li>
+            <li><span>→</span> You prefer a slick, award-winning banking app</li>
+            <li><span>→</span> You invest via EasyEquities and want everything in one app</li>
+          </ul>
+        </div>
+        <div class="verdict-card">
+          <h3>✦ Choose Nedbank if…</h3>
+          <ul>
+            <li><span>→</span> You need regular branch or in-person banking</li>
+            <li><span>→</span> You want to earn Greenbacks at supermarkets and retailers</li>
+            <li><span>→</span> You need a home loan or vehicle finance</li>
+            <li><span>→</span> You care about green banking and solar finance</li>
+            <li><span>→</span> You have existing Nedbank products or a business account</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h2>Ready to open a Discovery Bank account?</h2>
+      <p>Use referral code <strong>HDQ001</strong> when you sign up. Earn up to 5,000 Discovery Miles after your first qualifying transaction.</p>
+      <div class="cta-btns"><a class="btn-primary" href="https://www.discovery.co.za/bank" target="_blank" rel="noopener">Open Your Account →</a></div>
+      <p class="cta-disc">We earn Discovery Miles when you use our code. This does not affect our recommendations.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><a class="footer-logo" href="index.html"><span class="logo-accent">Bank</span><span class="logo-dark">ReviewsZA</span></a><p>Independent Discovery Bank guide for South Africans.</p></div>
+      <div class="footer-col"><h4>Discovery Bank</h4><ul><li><a href="index.html#review">Full Review</a></li><li><a href="index.html#tiers">Compare Cards</a></li><li><a href="index.html#vitality">Vitality Money</a></li></ul></div>
+      <div class="footer-col"><h4>Compare Banks</h4><ul><li><a href="vs-capitec.html">vs Capitec</a></li><li><a href="vs-fnb.html">vs FNB</a></li><li><a href="vs-nedbank.html">vs Nedbank</a></li><li><a href="vs-standard-bank.html">vs Standard Bank</a></li><li><a href="vs-absa.html">vs Absa</a></li><li><a href="vs-tymebank.html">vs TymeBank</a></li></ul></div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="https://www.discovery.co.za/bank" target="_blank" rel="noopener">Open Account</a></li><li><a href="index.html">Home</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>bankReviewsZA.co.za is an independent resource not affiliated with Discovery Limited, Nedbank, or any other financial institution. We earn Discovery Miles when you open an account using our referral code.</p>
+      <p>© 2026 Bank Reviews ZA. For educational purposes only — not financial advice.</p>
+    </div>
+  </footer>
+  <script>
+    function toggleMobileNav() { document.getElementById('mobileNav').classList.toggle('open'); }
+    function toggleMobileSub(btn) { const sub = btn.nextElementSibling; const isOpen = sub.style.display === 'block'; sub.style.display = isOpen ? 'none' : 'block'; btn.querySelector('span').textContent = isOpen ? '▾' : '▴'; }
+  </script>
+</body>
+</html>

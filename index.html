@@ -114,9 +114,142 @@
       color: var(--text-muted);
     }
 
+    /* ── HAMBURGER ──────────────────────────────────────── */
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px 0;
+      flex-direction: column;
+      gap: 5px;
+      align-items: center;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    /* ── MOBILE NAV OVERLAY ──────────────────────────────── */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 60px;
+      left: 0; right: 0; bottom: 0;
+      background: var(--white);
+      z-index: 98;
+      overflow-y: auto;
+      border-top: 1px solid var(--border);
+    }
+
+    .mobile-nav.open { display: block; }
+
+    .mobile-nav-list { list-style: none; padding: 0; }
+
+    .mobile-nav-item { border-bottom: 1px solid var(--border); }
+
+    .mobile-nav-link {
+      display: block;
+      padding: 16px 24px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .mobile-nav-toggle {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 16px 24px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: inherit;
+    }
+
+    .mobile-nav-sub {
+      list-style: none;
+      background: var(--page-bg);
+      padding: 4px 0 12px;
+    }
+
+    .mobile-nav-sub li a {
+      display: block;
+      padding: 10px 24px 10px 40px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .mobile-nav-sub li a:hover { color: var(--accent); }
+
+    .mobile-nav-cta-wrap { padding: 20px 24px 0; }
+
+    .mobile-nav-cta {
+      display: block;
+      background: var(--accent);
+      color: var(--white);
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* ── DESKTOP COMPARE DROPDOWN ────────────────────────── */
+    .has-dropdown { position: relative; }
+
+    .nav-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 16px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+      min-width: 180px;
+      list-style: none;
+      padding: 8px 0;
+      z-index: 200;
+    }
+
+    .has-dropdown:hover .nav-dropdown { display: block; }
+
+    .nav-dropdown li a {
+      display: block;
+      padding: 10px 18px;
+      font-size: 0.875rem;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 400;
+      white-space: nowrap;
+    }
+
+    .nav-dropdown li a:hover {
+      background: var(--accent-light);
+      color: var(--accent);
+    }
+
     @media (max-width: 768px) {
       .nav-center { display: none; }
       nav { padding: 0 20px; }
+      .nav-hamburger { display: flex; }
+      .nav-right .btn-nav,
+      .nav-right .dark-toggle { display: none; }
     }
 
     /* ── HERO ────────────────────────────────────────────── */
@@ -213,6 +346,19 @@
     }
 
     @media (max-width: 600px) { .section-wrap { padding: 48px 20px; } }
+
+    /* ── MOBILE IMPROVEMENTS ─────────────────────────────── */
+    @media (max-width: 600px) {
+      .hero { padding: 48px 20px 60px; }
+      .referral-code-row { flex-direction: column; align-items: stretch; }
+      .referral-code-row .btn-copy { justify-content: center; }
+      .email-row { flex-direction: column; }
+      .stay-updated-wrap { padding: 24px 20px; }
+      .bottom-cta-wrap { padding: 28px 20px; }
+      .referral-wrap { padding: 28px 20px; }
+      .compare-links { flex-direction: column; align-items: center; gap: 12px; }
+      .tiers-grid { grid-template-columns: 1fr; }
+    }
 
     .section-heading {
       text-align: center;
@@ -782,20 +928,54 @@
 
   <!-- ── NAVBAR ─────────────────────────────────────────── -->
   <nav>
-    <a class="nav-logo" href="#">
+    <a class="nav-logo" href="index.html">
       <span class="logo-accent">Bank</span><span class="logo-dark"> Reviews ZA</span>
     </a>
     <ul class="nav-center">
       <li><a href="#review">Review</a></li>
       <li><a href="#tiers">Cards</a></li>
-      <li><a href="#compare">Compare</a></li>
+      <li class="has-dropdown">
+        <a href="#compare">Compare</a>
+        <ul class="nav-dropdown">
+          <li><a href="vs-capitec.html">vs Capitec</a></li>
+          <li><a href="vs-fnb.html">vs FNB</a></li>
+          <li><a href="vs-nedbank.html">vs Nedbank</a></li>
+          <li><a href="vs-standard-bank.html">vs Standard Bank</a></li>
+          <li><a href="vs-absa.html">vs Absa</a></li>
+          <li><a href="vs-tymebank.html">vs TymeBank</a></li>
+        </ul>
+      </li>
       <li><a href="#vitality">Vitality Money</a></li>
     </ul>
     <div class="nav-right">
       <a class="btn-nav" href="https://www.discovery.co.za/bank" target="_blank" rel="noopener">Open Account</a>
       <button class="dark-toggle" title="Toggle dark mode" onclick="toggleDark()">🌙</button>
+      <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+
+  <!-- ── MOBILE NAV ─────────────────────────────────────── -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item"><a class="mobile-nav-link" href="#review" onclick="closeMobileNav()">Review</a></li>
+      <li class="mobile-nav-item"><a class="mobile-nav-link" href="#tiers" onclick="closeMobileNav()">Cards</a></li>
+      <li class="mobile-nav-item">
+        <button class="mobile-nav-toggle" onclick="toggleMobileSub(this)">Compare <span>▾</span></button>
+        <ul class="mobile-nav-sub" style="display:none">
+          <li><a href="vs-capitec.html">vs Capitec</a></li>
+          <li><a href="vs-fnb.html">vs FNB</a></li>
+          <li><a href="vs-nedbank.html">vs Nedbank</a></li>
+          <li><a href="vs-standard-bank.html">vs Standard Bank</a></li>
+          <li><a href="vs-absa.html">vs Absa</a></li>
+          <li><a href="vs-tymebank.html">vs TymeBank</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-item"><a class="mobile-nav-link" href="#vitality" onclick="closeMobileNav()">Vitality Money</a></li>
+      <li class="mobile-nav-cta-wrap"><a class="mobile-nav-cta" href="https://www.discovery.co.za/bank" target="_blank" rel="noopener">Open Account</a></li>
+    </ul>
+  </div>
 
   <!-- ── HERO ──────────────────────────────────────────── -->
   <section class="hero" id="review">
@@ -927,8 +1107,12 @@
         </table>
         <p class="compare-footnote">*Capitec's best rate requires a fixed deposit. Discovery's rate is on demand savings.</p>
         <div class="compare-links">
-          <a href="#">Discovery vs Capitec details</a>
-          <a href="#">Discovery vs FNB details</a>
+          <a href="vs-capitec.html">Discovery vs Capitec →</a>
+          <a href="vs-fnb.html">Discovery vs FNB →</a>
+          <a href="vs-nedbank.html">Discovery vs Nedbank →</a>
+          <a href="vs-standard-bank.html">Discovery vs Standard Bank →</a>
+          <a href="vs-absa.html">Discovery vs Absa →</a>
+          <a href="vs-tymebank.html">Discovery vs TymeBank →</a>
         </div>
       </div>
     </div>
@@ -1178,12 +1362,12 @@
       <div class="footer-col">
         <h4>Compare Banks</h4>
         <ul>
-          <li><a href="#">vs Capitec</a></li>
-          <li><a href="#">vs FNB</a></li>
-          <li><a href="#">vs Nedbank</a></li>
-          <li><a href="#">vs Standard Bank</a></li>
-          <li><a href="#">vs Absa</a></li>
-          <li><a href="#">vs TymeBank</a></li>
+          <li><a href="vs-capitec.html">vs Capitec</a></li>
+          <li><a href="vs-fnb.html">vs FNB</a></li>
+          <li><a href="vs-nedbank.html">vs Nedbank</a></li>
+          <li><a href="vs-standard-bank.html">vs Standard Bank</a></li>
+          <li><a href="vs-absa.html">vs Absa</a></li>
+          <li><a href="vs-tymebank.html">vs TymeBank</a></li>
         </ul>
       </div>
 
@@ -1246,6 +1430,20 @@
     function toggleDark() {
       dark = !dark;
       document.body.style.filter = dark ? 'invert(1) hue-rotate(180deg)' : '';
+    }
+
+    // Mobile nav
+    function toggleMobileNav() {
+      document.getElementById('mobileNav').classList.toggle('open');
+    }
+    function closeMobileNav() {
+      document.getElementById('mobileNav').classList.remove('open');
+    }
+    function toggleMobileSub(btn) {
+      const sub = btn.nextElementSibling;
+      const isOpen = sub.style.display === 'block';
+      sub.style.display = isOpen ? 'none' : 'block';
+      btn.querySelector('span').textContent = isOpen ? '▾' : '▴';
     }
 
     // Email subscribe → Google Sheets via Apps Script web app
