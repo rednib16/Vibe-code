@@ -16,13 +16,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <!-- Google Ads -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'AW-CONVERSION_ID');
+    gtag('config', 'G-XXXXXXXXXX');
   </script>
   <script type="application/ld+json">
   {
@@ -55,50 +55,50 @@
   </script>
   <style>
     :root {
-      --accent:        #1E6B43;
-      --accent-dark:   #155233;
-      --accent-light:  #EAF5EE;
-      --accent-border: #9DCDB1;
-      --hero-bg:       #0B1912;
-      --dark-bg:       #070F0A;
-      --page-bg:       #F4F1EB;
+      --accent:        #252840;
+      --accent-dark:   #14162A;
+      --accent-light:  #EAEBF5;
+      --accent-border: #B8B8D8;
+      --hero-bg:       #0C0D1C;
+      --dark-bg:       #060609;
+      --page-bg:       #F5F4F0;
       --white:         #FFFFFF;
-      --text:          #1A1A2E;
-      --text-muted:    #5C5C78;
-      --text-light:    #9090A8;
-      --border:        #E2DDD6;
-      --gold:          #B8922A;
-      --gold-dark:     #96761F;
-      --gold-light:    #FAF4E6;
-      --gold-border:   #E0CC90;
+      --text:          #1A1C2E;
+      --text-muted:    #68688A;
+      --text-light:    #9898B0;
+      --border:        #E0E0EA;
+      --gold:          #5A5880;
+      --gold-dark:     #3C3A60;
+      --gold-light:    #F0F0F8;
+      --gold-border:   #C8C8E0;
       --nav-h:         64px;
       --card-bg:       #FFFFFF;
-      --shadow:        rgba(0,0,0,0.08);
+      --shadow:        rgba(0,0,0,0.07);
     }
     [data-theme="dark"] {
-      --page-bg:       #090C18;
-      --white:         #0F1628;
-      --card-bg:       #131B35;
-      --text:          #F0EDE6;
+      --page-bg:       #0A0B16;
+      --white:         #12131E;
+      --card-bg:       #1A1B2C;
+      --text:          #EDECF4;
       --text-muted:    #9898B8;
-      --text-light:    #6A6A90;
-      --border:        #1E2640;
-      --accent-light:  #0A1A20;
-      --accent-border: #143325;
-      --gold-light:    #191608;
-      --gold-border:   #342C10;
-      --shadow:        rgba(0,0,0,0.45);
+      --text-light:    #6A6A88;
+      --border:        #242438;
+      --accent-light:  #141528;
+      --accent-border: #282A4A;
+      --gold-light:    #181824;
+      --gold-border:   #2C2C48;
+      --shadow:        rgba(0,0,0,0.5);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; font-size: 15px; color: var(--text); background: var(--page-bg); line-height: 1.65; transition: background .25s, color .25s; }
     a { color: inherit; text-decoration: none; }
     .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 8px; font-weight: 700; font-size: 15px; cursor: pointer; transition: all .2s; border: none; font-family: inherit; min-height: 48px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 8px; font-weight: 700; font-size: 15px; cursor: pointer; transition: all .2s; border: none; font-family: inherit; min-height: 48px; touch-action: manipulation; }
     .btn-primary { background: var(--accent); color: #fff; }
-    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); box-shadow: 0 4px 18px rgba(30,107,67,.35); }
+    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); box-shadow: 0 4px 18px rgba(37,40,64,.35); }
     .btn-gold { background: var(--gold); color: #fff; }
-    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 4px 18px rgba(184,146,42,.4); }
+    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 4px 18px rgba(90,88,128,.4); }
     .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.38); }
     .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.09); }
     .section { padding: 72px 0; }
@@ -113,7 +113,7 @@
 
     /* Nav */
     .nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); height: var(--nav-h); display: flex; align-items: center; transition: background .25s, border-color .25s; }
-    [data-theme="dark"] .nav { background: #0B0E20; border-color: rgba(255,255,255,0.07); }
+    [data-theme="dark"] .nav { background: #0C0D1C; border-color: rgba(255,255,255,0.07); }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 8px; }
     .nav-logo { font-size: 18px; font-weight: 800; color: var(--text); display: flex; align-items: center; gap: 9px; flex-shrink: 0; }
     .logo-mark { width: 32px; height: 32px; background: var(--accent); border-radius: 7px; display: flex; align-items: center; justify-content: center; }
@@ -137,7 +137,7 @@
     .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); transition: all .2s; border-radius: 2px; }
     [data-theme="dark"] .hamburger span { background: #fff; }
     .m-nav { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0; background: var(--white); overflow-y: auto; z-index: 99; padding: 16px; transition: background .25s; }
-    [data-theme="dark"] .m-nav { background: #0B0E20; }
+    [data-theme="dark"] .m-nav { background: #0C0D1C; }
     .m-nav a, .m-nav-sub-btn { display: flex; align-items: center; padding: 13px 16px; border-radius: 8px; font-size: 16px; font-weight: 500; color: var(--text); transition: background .15s; border: none; background: none; font-family: inherit; width: 100%; text-align: left; cursor: pointer; min-height: 48px; }
     .m-nav a:hover, .m-nav-sub-btn:hover { background: var(--accent-light); }
     .m-nav-sub { display: none; padding-left: 14px; }
@@ -145,7 +145,7 @@
     .m-nav-cta { display: block; margin-top: 16px; text-align: center; background: var(--accent); color: #fff !important; padding: 15px; border-radius: 10px; font-weight: 700; min-height: 52px; }
 
     /* Hero */
-    .hero { background: var(--hero-bg); background-image: radial-gradient(ellipse at 65% 40%, rgba(30,107,67,.22) 0%, transparent 58%); padding: 88px 0 72px; color: #fff; position: relative; overflow: hidden; }
+    .hero { background: var(--hero-bg); background-image: radial-gradient(ellipse at 65% 40%, rgba(90,88,128,.28) 0%, transparent 58%); padding: 88px 0 72px; color: #fff; position: relative; overflow: hidden; }
     .hero::after { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Cpath d='M0 0h40v40H0zm40 40h40v40H40z'/%3E%3C/g%3E%3C/svg%3E"); pointer-events: none; }
     .hero-inner { position: relative; z-index: 1; }
     .hero-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; font-size: 13px; color: rgba(255,255,255,.55); letter-spacing: .3px; }
@@ -172,9 +172,9 @@
     .why-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
 
     /* Referral Box */
-    .ref-box { background: linear-gradient(140deg, #0B1912 0%, #112A1B 100%); border-radius: 18px; padding: 52px; color: #fff; position: relative; overflow: hidden; }
-    .ref-box::before { content: ''; position: absolute; top: -80px; right: -80px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(184,146,42,.14) 0%, transparent 70%); pointer-events: none; }
-    .ref-box::after { content: ''; position: absolute; bottom: -60px; left: 10%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(30,107,67,.12) 0%, transparent 70%); pointer-events: none; }
+    .ref-box { background: linear-gradient(140deg, #0C0D1C 0%, #14162A 100%); border-radius: 18px; padding: 52px; color: #fff; position: relative; overflow: hidden; }
+    .ref-box::before { content: ''; position: absolute; top: -80px; right: -80px; width: 320px; height: 320px; background: radial-gradient(circle, rgba(90,88,128,.20) 0%, transparent 70%); pointer-events: none; }
+    .ref-box::after { content: ''; position: absolute; bottom: -60px; left: 10%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(37,40,64,.18) 0%, transparent 70%); pointer-events: none; }
     .ref-inner { position: relative; z-index: 1; }
     .ref-box h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; margin-bottom: 14px; line-height: 1.2; }
     .ref-box h2 em { color: var(--gold); font-style: normal; }
@@ -230,9 +230,9 @@
     .cmp-table { width: 100%; border-collapse: collapse; font-size: 14px; }
     .cmp-table th, .cmp-table td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--border); }
     .cmp-table thead th { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; background: var(--page-bg); white-space: nowrap; color: var(--text); }
-    .cmp-table thead th.col-inv { background: #1E6B43; color: #fff; }
-    .cmp-table thead th.col-rmb { background: #D4001A; color: #fff; }
-    .cmp-table thead th.col-disc { background: #1447E6; color: #fff; }
+    .cmp-table thead th.col-inv { background: var(--accent); color: #fff; }
+    .cmp-table thead th.col-rmb { background: var(--card-bg); color: var(--text); border-top: 3px solid #D4001A; }
+    .cmp-table thead th.col-disc { background: var(--card-bg); color: var(--text); border-top: 3px solid #7C3AED; }
     .cmp-table tbody tr:last-child td { border-bottom: none; }
     .cmp-table tbody tr:hover { background: var(--accent-light); }
     .cmp-table tbody td { background: var(--card-bg); color: var(--text); }
@@ -277,8 +277,8 @@
     .nl-note { margin-top: 10px; font-size: 13px; color: var(--text-light); text-align: center; }
 
     /* CTA Box */
-    .cta-box { background: linear-gradient(140deg, #0B1912 0%, #0D2A18 100%); border-radius: 20px; padding: 60px; text-align: center; color: #fff; position: relative; overflow: hidden; }
-    .cta-box::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(30,107,67,.28) 0%, transparent 60%); }
+    .cta-box { background: linear-gradient(140deg, #0C0D1C 0%, #14162A 100%); border-radius: 20px; padding: 60px; text-align: center; color: #fff; position: relative; overflow: hidden; }
+    .cta-box::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(90,88,128,.3) 0%, transparent 60%); }
     .cta-inner { position: relative; z-index: 1; }
     .cta-box h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 800; margin-bottom: 14px; }
     .cta-box h2 em { color: var(--gold); font-style: normal; }
@@ -299,6 +299,10 @@
     .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 26px; display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap; }
     .footer-copy { font-size: 12px; }
     .footer-legal { font-size: 12px; color: rgba(255,255,255,.32); max-width: 580px; line-height: 1.65; }
+
+    /* Sticky apply bar */
+    .sticky-apply { position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(90deg, #0C0D1C, #14162A); padding: 12px 24px; z-index: 300; transform: translateY(100%); transition: transform .35s ease; }
+    .sticky-apply.visible { transform: translateY(0); }
 
     /* Responsive */
     @media (max-width: 860px) {
@@ -667,7 +671,7 @@
           <tr>
             <td>Monthly fee</td>
             <td class="val-good">R675 all-inclusive</td>
-            <td>R290/month</td>
+            <td>R625/month</td>
             <td>R679/month (bundled) + R4,000/yr card fee</td>
           </tr>
           <tr>
@@ -805,6 +809,30 @@
   </div>
 </section>
 
+<!-- Email Subscribe -->
+<section class="section section-white" id="subscribe" style="padding:52px 0;">
+  <div class="container" style="max-width:660px;text-align:center;">
+    <div class="badge badge-gold" style="margin-bottom:14px;">Stay Informed</div>
+    <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:10px;">Private banking insights, delivered quarterly</h2>
+    <p style="color:var(--text-muted);margin-bottom:28px;line-height:1.75;max-width:520px;margin-left:auto;margin-right:auto;">Fee changes, new Investec benefits, and honest private banking analysis — straight to your inbox. No spam. Unsubscribe anytime.</p>
+    <form id="subForm" onsubmit="submitEmail(event)" style="display:flex;gap:10px;max-width:480px;margin:0 auto;flex-wrap:wrap;">
+      <input type="email" id="subEmail" placeholder="your@email.com" required autocomplete="email" style="flex:1;min-width:200px;padding:13px 16px;border:1px solid var(--border);border-radius:8px;font-family:inherit;font-size:15px;color:var(--text);background:var(--card-bg);outline:none;transition:border-color .2s;min-height:48px;touch-action:manipulation;">
+      <button type="submit" id="subBtn" class="btn btn-primary" style="white-space:nowrap;touch-action:manipulation;">Subscribe →</button>
+    </form>
+    <div id="subSuccess" style="display:none;margin-top:16px;color:var(--accent);font-weight:700;font-size:15px;">&#10003; You're on the list. Thank you!</div>
+    <div id="subError" style="display:none;margin-top:16px;color:#DC2626;font-size:14px;">Something went wrong — please try again.</div>
+    <p style="margin-top:12px;font-size:12px;color:var(--text-light);">Your email is stored securely. We never sell or share your data.</p>
+  </div>
+</section>
+
+<!-- Sticky Apply CTA (appears after scrolling past hero) -->
+<div class="sticky-apply" id="stickyApply">
+  <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;">
+    <div style="font-size:14px;font-weight:600;color:rgba(255,255,255,.85);">Investec Private Banking &mdash; R675/month, all-inclusive</div>
+    <a href="https://referrals.investec.com/apply/FYmhJw" target="_blank" rel="noopener" class="btn btn-gold" style="padding:10px 22px;font-size:14px;min-height:40px;" onclick="trackApply('sticky_bar')">Apply Now &rarr;</a>
+  </div>
+</div>
+
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
@@ -850,10 +878,9 @@
 <div class="toast" id="toast">&#10003; Link copied to clipboard</div>
 
 <script>
-  // Google Ads conversion tracking
-  function trackApply() {
+  function trackApply(label) {
     if (typeof gtag !== 'undefined') {
-      gtag('event', 'conversion', {'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL'});
+      gtag('event', 'apply_click', { event_category: 'cta', event_label: label || 'apply_now' });
     }
   }
 
@@ -905,6 +932,46 @@
   function toggleFaq(el) {
     el.parentElement.classList.toggle('open');
   }
+
+  // Email subscription
+  var APPS_SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE'; // Replace after deploying google-apps-script.js
+  function submitEmail(e) {
+    e.preventDefault();
+    var email = document.getElementById('subEmail').value.trim();
+    if (!email) return;
+    var btn = document.getElementById('subBtn');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, source: 'bankinvestec.co.za', page: 'index' }),
+      mode: 'no-cors'
+    }).then(function() {
+      document.getElementById('subEmail').value = '';
+      document.getElementById('subSuccess').style.display = 'block';
+      document.getElementById('subError').style.display = 'none';
+      if (typeof gtag !== 'undefined') gtag('event', 'email_subscribe', { event_category: 'engagement' });
+    }).catch(function() {
+      document.getElementById('subError').style.display = 'block';
+    }).finally(function() {
+      btn.textContent = 'Subscribe →';
+      btn.disabled = false;
+    });
+  }
+
+  // Sticky apply bar
+  (function() {
+    var bar = document.getElementById('stickyApply');
+    var hero = document.getElementById('review');
+    if (!bar || !hero) return;
+    var shown = false;
+    window.addEventListener('scroll', function() {
+      var heroBottom = hero.getBoundingClientRect().bottom;
+      if (!shown && heroBottom < 0) { bar.classList.add('visible'); shown = true; }
+      else if (shown && heroBottom >= 0) { bar.classList.remove('visible'); shown = false; }
+    }, { passive: true });
+  })();
 
   // Copy link
   function copyLink() {
