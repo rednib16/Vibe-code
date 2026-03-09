@@ -61,12 +61,12 @@
       --accent-border: #9DCDB1;
       --hero-bg:       #0B1912;
       --dark-bg:       #070F0A;
-      --page-bg:       #F4F6F5;
+      --page-bg:       #F4F1EB;
       --white:         #FFFFFF;
-      --text:          #0B1912;
-      --text-muted:    #556260;
-      --text-light:    #8A9E9A;
-      --border:        #E0E6E3;
+      --text:          #1A1A2E;
+      --text-muted:    #5C5C78;
+      --text-light:    #9090A8;
+      --border:        #E2DDD6;
       --gold:          #B8922A;
       --gold-dark:     #96761F;
       --gold-light:    #FAF4E6;
@@ -76,18 +76,18 @@
       --shadow:        rgba(0,0,0,0.08);
     }
     [data-theme="dark"] {
-      --page-bg:       #0A1710;
-      --white:         #112A1B;
-      --card-bg:       #152B1E;
-      --text:          #E8F0EB;
-      --text-muted:    #8AB89C;
-      --text-light:    #6A9A7A;
-      --border:        #1F3A28;
-      --accent-light:  #152B1E;
-      --accent-border: #1E3D28;
-      --gold-light:    #1E1A08;
-      --gold-border:   #3D3210;
-      --shadow:        rgba(0,0,0,0.3);
+      --page-bg:       #090C18;
+      --white:         #0F1628;
+      --card-bg:       #131B35;
+      --text:          #F0EDE6;
+      --text-muted:    #9898B8;
+      --text-light:    #6A6A90;
+      --border:        #1E2640;
+      --accent-light:  #0A1A20;
+      --accent-border: #143325;
+      --gold-light:    #191608;
+      --gold-border:   #342C10;
+      --shadow:        rgba(0,0,0,0.45);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -113,7 +113,7 @@
 
     /* Nav */
     .nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); height: var(--nav-h); display: flex; align-items: center; transition: background .25s, border-color .25s; }
-    [data-theme="dark"] .nav { background: #0B1912; border-color: rgba(255,255,255,0.08); }
+    [data-theme="dark"] .nav { background: #0B0E20; border-color: rgba(255,255,255,0.07); }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 8px; }
     .nav-logo { font-size: 18px; font-weight: 800; color: var(--text); display: flex; align-items: center; gap: 9px; flex-shrink: 0; }
     .logo-mark { width: 32px; height: 32px; background: var(--accent); border-radius: 7px; display: flex; align-items: center; justify-content: center; }
@@ -137,7 +137,7 @@
     .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); transition: all .2s; border-radius: 2px; }
     [data-theme="dark"] .hamburger span { background: #fff; }
     .m-nav { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0; background: var(--white); overflow-y: auto; z-index: 99; padding: 16px; transition: background .25s; }
-    [data-theme="dark"] .m-nav { background: #0B1912; }
+    [data-theme="dark"] .m-nav { background: #0B0E20; }
     .m-nav a, .m-nav-sub-btn { display: flex; align-items: center; padding: 13px 16px; border-radius: 8px; font-size: 16px; font-weight: 500; color: var(--text); transition: background .15s; border: none; background: none; font-family: inherit; width: 100%; text-align: left; cursor: pointer; min-height: 48px; }
     .m-nav a:hover, .m-nav-sub-btn:hover { background: var(--accent-light); }
     .m-nav-sub { display: none; padding-left: 14px; }
@@ -461,7 +461,7 @@
       <div class="ref-inner">
         <div class="badge badge-gold" style="margin-bottom:18px;">Exclusive Application Link</div>
         <h2>Apply for Investec Private Banking <em>through our link</em></h2>
-        <p>Use our exclusive referral link to begin your Investec Private Bank Account application. You'll get the full private banking experience, and we may earn a small reward at absolutely no cost to you.</p>
+        <p>Use our exclusive referral link to begin your Investec Private Bank Account application. You'll get the full private banking experience — and once you're a client, you can earn <strong style="color:var(--gold);">R3,750 per referral</strong> yourself by introducing qualifying friends and colleagues to Investec.</p>
         <div class="ref-row">
           <div class="ref-url">referrals.investec.com/apply/FYmhJw</div>
           <button class="ref-copy" onclick="copyLink()">
@@ -668,7 +668,13 @@
             <td>Monthly fee</td>
             <td class="val-good">R675 all-inclusive</td>
             <td>R290/month</td>
-            <td>R495/month</td>
+            <td>R679/month (bundled) + R4,000/yr card fee</td>
+          </tr>
+          <tr>
+            <td>Income minimum</td>
+            <td>R800,000 p.a.</td>
+            <td>R750,000 p.a.</td>
+            <td>R2.5 million p.a.</td>
           </tr>
           <tr>
             <td>Young Professional rate</td>
@@ -677,34 +683,16 @@
             <td>Not available</td>
           </tr>
           <tr>
-            <td>Fee waiver option</td>
-            <td>None</td>
-            <td><span class="chk-part">Yes (R200k+ balance)</span></td>
-            <td><span class="chk-part">Up to 75% (Vitality Money)</span></td>
-          </tr>
-          <tr>
-            <td>Income minimum</td>
-            <td>R800,000 p.a.</td>
-            <td>R750,000 p.a.</td>
-            <td class="val-good">None required</td>
-          </tr>
-          <tr>
             <td>Airport lounges</td>
-            <td class="val-good">1,100+ worldwide</td>
+            <td class="val-good">1,100+ worldwide (unlimited)</td>
             <td>700 via Priority Pass</td>
-            <td>Selected (limited visits)</td>
-          </tr>
-          <tr>
-            <td>Lounge visit cap</td>
-            <td class="val-good">Unlimited</td>
-            <td>Per terms</td>
-            <td>Limited per year</td>
+            <td>The Lounge (spend R3,150+/month to qualify)</td>
           </tr>
           <tr>
             <td>Multi-currency card</td>
             <td class="val-good">Yes (GBP/USD/EUR/ZAR)</td>
             <td><span class="chk-no">No</span></td>
-            <td><span class="chk-no">No</span></td>
+            <td><span class="chk-part">Forex accounts (USD/GBP/EUR)</span></td>
           </tr>
           <tr>
             <td>UK bank account</td>
@@ -716,19 +704,25 @@
             <td>Dedicated private banker</td>
             <td class="val-good">Yes, 24/7</td>
             <td><span class="chk-yes">Yes</span></td>
-            <td><span class="chk-no">No (digital only)</span></td>
+            <td><span class="chk-yes">Yes, relationship banker</span></td>
           </tr>
           <tr>
             <td>Rewards programme</td>
             <td class="val-good">Investec Rewards</td>
             <td>eBucks</td>
-            <td>Discovery Miles</td>
+            <td>Discovery Miles + Vitality Money</td>
           </tr>
           <tr>
             <td>Points never expire</td>
             <td class="val-good">Yes</td>
             <td>Check terms</td>
-            <td>Expire if not active</td>
+            <td>Expire if not maintained</td>
+          </tr>
+          <tr>
+            <td>Refer a friend reward</td>
+            <td class="val-good">R3,750 per successful referral</td>
+            <td><span class="chk-no">Not available</span></td>
+            <td><span class="chk-no">Not available</span></td>
           </tr>
           <tr>
             <td>Vehicle finance</td>
@@ -784,6 +778,10 @@
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Is Investec a safe and reputable bank?<svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
         <div class="faq-a">Yes. Investec Bank Limited is a registered South African bank regulated by the South African Reserve Bank (SARB) and the Prudential Authority. Investec has operated since 1974 and is dual-listed on the JSE and London Stock Exchange. It was named Bank of the Year 2025 by The Banker (Financial Times Group) and has been South Africa's Best Private Bank for 13 consecutive years.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I earn money by referring friends to Investec?<svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+        <div class="faq-a">Yes. As an Investec Private Bank client, you can refer other qualifying professionals and earn <strong>R3,750 for each successful referral</strong> — when the person you refer opens a qualifying Investec Private Bank Account. This is one of the rare private banking perks that continues to reward you beyond your own account. Your friend also benefits from being introduced through a trusted contact rather than a cold application.</div>
       </div>
     </div>
   </div>

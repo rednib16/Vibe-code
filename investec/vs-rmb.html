@@ -29,12 +29,12 @@
       --accent-border: #9DCDB1;
       --hero-bg:       #0B1912;
       --dark-bg:       #070F0A;
-      --page-bg:       #F4F6F5;
+      --page-bg:       #F4F1EB;
       --white:         #FFFFFF;
-      --text:          #0B1912;
-      --text-muted:    #556260;
-      --text-light:    #8A9E9A;
-      --border:        #E0E6E3;
+      --text:          #1A1A2E;
+      --text-muted:    #5C5C78;
+      --text-light:    #9090A8;
+      --border:        #E2DDD6;
       --gold:          #B8922A;
       --gold-dark:     #96761F;
       --gold-light:    #FAF4E6;
@@ -46,19 +46,19 @@
       --shadow:        rgba(0,0,0,0.08);
     }
     [data-theme="dark"] {
-      --page-bg:       #0A1710;
-      --white:         #112A1B;
-      --card-bg:       #152B1E;
-      --text:          #E8F0EB;
-      --text-muted:    #8AB89C;
-      --text-light:    #6A9A7A;
-      --border:        #1F3A28;
-      --accent-light:  #152B1E;
-      --accent-border: #1E3D28;
-      --gold-light:    #1E1A08;
-      --gold-border:   #3D3210;
-      --shadow:        rgba(0,0,0,0.3);
-      --rmb-light:     #1F0508;
+      --page-bg:       #090C18;
+      --white:         #0F1628;
+      --card-bg:       #131B35;
+      --text:          #F0EDE6;
+      --text-muted:    #9898B8;
+      --text-light:    #6A6A90;
+      --border:        #1E2640;
+      --accent-light:  #0A1A20;
+      --accent-border: #143325;
+      --gold-light:    #191608;
+      --gold-border:   #342C10;
+      --shadow:        rgba(0,0,0,0.45);
+      --rmb-light:     #200810;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -81,7 +81,7 @@
 
     /* Nav */
     .nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); height: var(--nav-h); display: flex; align-items: center; transition: background .25s, border-color .25s; }
-    [data-theme="dark"] .nav { background: #0B1912; border-color: rgba(255,255,255,0.08); }
+    [data-theme="dark"] .nav { background: #0B0E20; border-color: rgba(255,255,255,0.07); }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 8px; }
     .nav-logo { font-size: 18px; font-weight: 800; color: var(--text); display: flex; align-items: center; gap: 9px; flex-shrink: 0; }
     .logo-mark { width: 32px; height: 32px; background: var(--accent); border-radius: 7px; display: flex; align-items: center; justify-content: center; }
@@ -105,7 +105,7 @@
     .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
     [data-theme="dark"] .hamburger span { background: #fff; }
     .m-nav { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0; background: var(--white); overflow-y: auto; z-index: 99; padding: 16px; transition: background .25s; }
-    [data-theme="dark"] .m-nav { background: #0B1912; }
+    [data-theme="dark"] .m-nav { background: #0B0E20; }
     .m-nav a { display: flex; align-items: center; padding: 13px 16px; border-radius: 8px; font-size: 16px; font-weight: 500; color: var(--text); min-height: 48px; }
     .m-nav a:hover { background: var(--accent-light); }
     .m-nav-cta { display: block; margin-top: 16px; text-align: center; background: var(--accent); color: #fff !important; padding: 15px; border-radius: 10px; font-weight: 700; min-height: 52px; }
@@ -296,7 +296,7 @@
             <tr><td>Standard monthly fee</td><td class="val-good">R675 all-inclusive</td><td>R290/month</td></tr>
             <tr><td>Young Professional rate</td><td class="val-good">R340/month (under 30)</td><td>Not specified</td></tr>
             <tr><td>Fee waiver option</td><td>No waiver</td><td><span class="chk-part">Waived at R200k+ balance</span></td></tr>
-            <tr><td>Spouse / partner account</td><td>Reduced family fee</td><td>R299/month (waived at R100k+ balance)</td></tr>
+            <tr><td>Spouse / partner account</td><td>Reduced family fee</td><td class="val-good">50% off (R145/month)</td></tr>
             <tr><td>Free local ATM withdrawals</td><td><span class="chk-yes">Unlimited</span></td><td><span class="chk-yes">Unlimited</span></td></tr>
             <tr><td>Free international ATM withdrawals</td><td><span class="chk-yes">Yes (Investec charge)</span></td><td><span class="chk-yes">Yes</span></td></tr>
             <tr><td>Unlimited transactions included</td><td><span class="chk-yes">Yes</span></td><td><span class="chk-yes">Yes</span></td></tr>
@@ -407,6 +407,7 @@
             <tr><td>Home loans</td><td><span class="chk-yes">Yes</span></td><td><span class="chk-yes">Yes, specialist pricing</span></td></tr>
             <tr><td>Insurance</td><td class="val-good">Pinion (via Aon SA)</td><td>AA Roadside + partners</td></tr>
             <tr><td>Young Professional benefits</td><td class="val-good">R340/month + R25k life insurance</td><td>Standard rate applies</td></tr>
+            <tr><td>Refer a friend reward</td><td class="val-good">R3,750 per successful referral</td><td><span class="chk-no">Not available</span></td></tr>
           </tbody>
         </table>
       </div>

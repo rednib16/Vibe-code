@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Investec vs Discovery Bank: The Honest Comparison (2026) | Bank Investec</title>
-  <meta name="description" content="Investec vs Discovery Bank compared head-to-head. Fees, eligibility, rewards, and our verdict on which South African bank suits your lifestyle.">
-  <meta property="og:title" content="Investec vs Discovery Bank: The Honest Comparison (2026)">
-  <meta property="og:description" content="A detailed, unbiased comparison of Investec Private Bank and Discovery Bank — fees, rewards, eligibility, and our verdict.">
+  <title>Investec vs Discovery Purple Card: The Honest Comparison (2026) | Bank Investec</title>
+  <meta name="description" content="Investec vs Discovery Bank Purple Card compared head-to-head. Fees, eligibility, rewards, and our verdict on which premium South African bank suits your lifestyle.">
+  <meta property="og:title" content="Investec vs Discovery Purple Card: The Honest Comparison (2026)">
+  <meta property="og:description" content="A detailed, unbiased comparison of Investec Private Bank and Discovery Bank Purple Card — fees, rewards, eligibility, and our verdict.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://bankinvestec.co.za/vs-discovery.html">
   <link rel="canonical" href="https://bankinvestec.co.za/vs-discovery.html">
@@ -17,30 +17,47 @@
     :root {
       --accent:        #1E6B43;
       --accent-dark:   #155233;
-      --accent-light:  #EAF5EE;
-      --accent-border: #9DCDB1;
+      --accent-light:  #EBF5F0;
+      --accent-border: #A8D5BC;
       --hero-bg:       #0B1912;
-      --dark-bg:       #070F0A;
-      --page-bg:       #F4F6F5;
+      --dark-bg:       #05080E;
+      --page-bg:       #F4F1EB;
       --white:         #FFFFFF;
-      --text:          #0B1912;
-      --text-muted:    #556260;
-      --text-light:    #8A9E9A;
-      --border:        #E0E6E3;
+      --text:          #1A1A2E;
+      --text-muted:    #5C5C78;
+      --text-light:    #9090A8;
+      --border:        #E2DDD6;
       --gold:          #B8922A;
       --gold-dark:     #96761F;
-      --gold-light:    #FAF4E6;
+      --gold-light:    #FAF5E6;
       --gold-border:   #E0CC90;
-      --disc-color:    #1447E6;
-      --disc-light:    #EEF2FF;
+      --disc-color:    #7C3AED;
+      --disc-light:    #F3EFFD;
       --nav-h:         64px;
+      --card-bg:       #FFFFFF;
+      --shadow:        rgba(0,0,0,0.07);
+    }
+    [data-theme="dark"] {
+      --page-bg:       #090C18;
+      --white:         #0F1628;
+      --card-bg:       #131B35;
+      --text:          #F0EDE6;
+      --text-muted:    #9898B8;
+      --text-light:    #6A6A90;
+      --border:        #1E2640;
+      --accent-light:  #0A1A20;
+      --accent-border: #143325;
+      --gold-light:    #191608;
+      --gold-border:   #342C10;
+      --shadow:        rgba(0,0,0,0.45);
+      --disc-light:    #1A1030;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; font-size: 15px; color: var(--text); background: var(--white); line-height: 1.65; }
+    body { font-family: 'Inter', sans-serif; font-size: 15px; color: var(--text); background: var(--page-bg); line-height: 1.65; transition: background .25s, color .25s; }
     a { color: inherit; text-decoration: none; }
     .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 8px; font-weight: 700; font-size: 15px; cursor: pointer; transition: all .2s; border: none; font-family: inherit; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 8px; font-weight: 700; font-size: 15px; cursor: pointer; transition: all .2s; border: none; font-family: inherit; min-height: 48px; }
     .btn-primary { background: var(--accent); color: #fff; }
     .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); box-shadow: 0 4px 18px rgba(30,107,67,.35); }
     .btn-gold { background: var(--gold); color: #fff; }
@@ -49,35 +66,44 @@
     .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.09); }
     .section { padding: 64px 0; }
     .section-alt { background: var(--page-bg); }
+    .section-white { background: var(--white); }
     .badge { display: inline-block; padding: 4px 13px; border-radius: 20px; font-size: 12px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; }
     .badge-gold { background: var(--gold-light); color: var(--gold-dark); border: 1px solid var(--gold-border); }
     .badge-green { background: var(--accent-light); color: var(--accent-dark); border: 1px solid var(--accent-border); }
 
     /* Nav */
-    .nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); height: var(--nav-h); display: flex; align-items: center; }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
-    .nav-logo { font-size: 18px; font-weight: 800; color: var(--text); display: flex; align-items: center; gap: 9px; }
+    .nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); height: var(--nav-h); display: flex; align-items: center; transition: background .25s, border-color .25s; }
+    [data-theme="dark"] .nav { background: #0B0E20; border-color: rgba(255,255,255,0.07); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 8px; }
+    .nav-logo { font-size: 18px; font-weight: 800; color: var(--text); display: flex; align-items: center; gap: 9px; flex-shrink: 0; }
     .logo-mark { width: 32px; height: 32px; background: var(--accent); border-radius: 7px; display: flex; align-items: center; justify-content: center; }
     .logo-mark svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
     .nav-logo em { color: var(--accent); font-style: normal; }
     .nav-links { display: flex; align-items: center; gap: 2px; }
-    .nav-links a { padding: 8px 14px; border-radius: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); transition: all .15s; }
-    .nav-links a:hover { color: var(--text); background: var(--page-bg); }
+    .nav-links a { padding: 8px 14px; border-radius: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); transition: all .15s; min-height: 40px; display: flex; align-items: center; }
+    .nav-links a:hover { color: var(--text); background: var(--accent-light); }
     .nav-dd { position: relative; }
-    .nav-dd-btn { display: flex; align-items: center; gap: 4px; padding: 8px 14px; border-radius: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); cursor: pointer; background: none; border: none; font-family: inherit; transition: all .15s; }
-    .nav-dd-btn:hover { color: var(--text); background: var(--page-bg); }
-    .nav-dd-menu { display: none; position: absolute; top: calc(100% + 8px); left: 0; background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 6px; min-width: 220px; box-shadow: 0 8px 28px rgba(0,0,0,.10); z-index: 200; }
-    .nav-dd:hover .nav-dd-menu { display: block; }
-    .nav-dd-menu a { display: block; padding: 9px 14px; border-radius: 6px; font-size: 14px; color: var(--text); transition: background .15s; }
+    .nav-dd-btn { display: flex; align-items: center; gap: 4px; padding: 8px 14px; border-radius: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); cursor: pointer; background: none; border: none; font-family: inherit; transition: all .15s; min-height: 40px; }
+    .nav-dd-btn:hover { color: var(--text); background: var(--accent-light); }
+    .nav-dd-menu { display: none; position: absolute; top: calc(100% + 8px); left: 0; background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 6px; min-width: 240px; box-shadow: 0 8px 28px var(--shadow); z-index: 200; }
+    .nav-dd-menu.open { display: block; }
+    .nav-dd-menu a { display: flex; align-items: center; padding: 10px 14px; border-radius: 6px; font-size: 14px; color: var(--text); transition: background .15s; min-height: 40px; }
     .nav-dd-menu a:hover { background: var(--accent-light); color: var(--accent); }
-    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); margin: 5px 0; border-radius: 2px; }
-    .m-nav { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0; background: var(--white); overflow-y: auto; z-index: 99; padding: 16px; }
-    .m-nav a { display: block; padding: 13px 16px; border-radius: 8px; font-size: 16px; font-weight: 500; color: var(--text); }
-    .m-nav-cta { display: block; margin-top: 16px; text-align: center; background: var(--accent); color: #fff !important; padding: 15px; border-radius: 10px; font-weight: 700; }
+    .nav-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .theme-toggle { width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .2s; color: var(--text-muted); }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+    .theme-toggle svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; min-width: 40px; min-height: 48px; align-items: center; justify-content: center; flex-direction: column; gap: 5px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+    [data-theme="dark"] .hamburger span { background: #fff; }
+    .m-nav { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0; background: var(--white); overflow-y: auto; z-index: 99; padding: 16px; transition: background .25s; }
+    [data-theme="dark"] .m-nav { background: #0B0E20; }
+    .m-nav a { display: flex; align-items: center; padding: 13px 16px; border-radius: 8px; font-size: 16px; font-weight: 500; color: var(--text); min-height: 48px; }
+    .m-nav a:hover { background: var(--accent-light); }
+    .m-nav-cta { display: block; margin-top: 16px; text-align: center; background: var(--accent); color: #fff !important; padding: 15px; border-radius: 10px; font-weight: 700; min-height: 52px; }
 
     /* Breadcrumb */
-    .breadcrumb { padding: 14px 0; font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+    .breadcrumb { padding: 14px 0; font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
     .breadcrumb a { color: var(--accent); }
     .breadcrumb-sep { opacity: .4; }
 
@@ -102,11 +128,12 @@
     .table-wrap { overflow-x: auto; border-radius: 13px; border: 1px solid var(--border); }
     .cmp-table { width: 100%; border-collapse: collapse; font-size: 14px; }
     .cmp-table th, .cmp-table td { padding: 13px 18px; text-align: left; border-bottom: 1px solid var(--border); }
-    .cmp-table thead th { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; background: var(--page-bg); white-space: nowrap; }
-    .cmp-table thead th.col-inv { background: var(--accent); color: #fff; }
+    .cmp-table thead th { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; background: var(--page-bg); white-space: nowrap; color: var(--text); }
+    .cmp-table thead th.col-inv { background: #1E6B43; color: #fff; }
     .cmp-table thead th.col-disc { background: var(--disc-color); color: #fff; }
     .cmp-table tbody tr:last-child td { border-bottom: none; }
-    .cmp-table tbody tr:hover { background: var(--page-bg); }
+    .cmp-table tbody td { background: var(--card-bg); color: var(--text); }
+    .cmp-table tbody tr:hover td { background: var(--accent-light); }
     .val-good { color: var(--accent); font-weight: 600; }
     .chk-yes { color: var(--accent); font-weight: 700; }
     .chk-no { color: #DC2626; font-weight: 700; }
@@ -158,9 +185,10 @@
     }
     @media (max-width: 600px) {
       .nav-links { display: none; }
-      .hamburger { display: block; }
+      .hamburger { display: flex; }
       .footer-grid { grid-template-columns: 1fr; }
       .section { padding: 44px 0; }
+      .nav-right .btn { display: none; }
     }
   </style>
 </head>
@@ -180,19 +208,25 @@
         <a href="index.html#review">Review</a>
         <a href="index.html#features">Account</a>
         <div class="nav-dd">
-          <button class="nav-dd-btn">Compare <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-          <div class="nav-dd-menu">
-            <a href="vs-rmb.html">Investec vs RMB Private Bank</a>
-            <a href="vs-discovery.html">Investec vs Discovery Bank</a>
+          <button class="nav-dd-btn" onclick="toggleDropdown(event,'ddMenu')" aria-haspopup="true">Compare <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <div class="nav-dd-menu" id="ddMenu" role="menu">
+            <a href="vs-rmb.html">Investec vs RMB Private Account</a>
+            <a href="vs-discovery.html">Investec vs Discovery Purple Card</a>
           </div>
         </div>
         <a href="index.html#rewards">Rewards</a>
         <a href="index.html#faq">FAQ</a>
       </div>
-      <a href="https://referrals.secure.investec.com/apply/FYmhJw" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:14px;padding:9px 20px;margin-left:10px;">Apply Now</a>
-      <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" onclick="toggleTheme()">
+          <svg id="moonIcon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg id="sunIcon" viewBox="0 0 24 24" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="https://referrals.secure.investec.com/apply/FYmhJw" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:14px;padding:9px 20px;">Apply Now</a>
+        <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </div>
 </nav>
@@ -200,8 +234,8 @@
 <div class="m-nav" id="mNav">
   <a href="index.html">Home</a>
   <a href="index.html#features">Account &amp; Fees</a>
-  <a href="vs-rmb.html">Investec vs RMB</a>
-  <a href="vs-discovery.html">Investec vs Discovery</a>
+  <a href="vs-rmb.html">Investec vs RMB Private Account</a>
+  <a href="vs-discovery.html">Investec vs Discovery Purple Card</a>
   <a href="https://referrals.secure.investec.com/apply/FYmhJw" class="m-nav-cta" target="_blank" rel="noopener">Apply for Private Banking</a>
 </div>
 
@@ -211,54 +245,58 @@
     <div class="breadcrumb">
       <a href="index.html">Bank Investec</a>
       <span class="breadcrumb-sep">/</span>
-      <span>Investec vs Discovery Bank</span>
+      <span>Investec vs Discovery Purple Card</span>
     </div>
     <div class="page-hero-tag">Head-to-Head Comparison</div>
-    <h1>Investec vs Discovery Bank:<br>The Honest Comparison (2026)</h1>
-    <p style="color:rgba(255,255,255,.65);max-width:580px;margin-top:14px;line-height:1.75;">Two very different banks targeting different ends of the market. We break down fees, eligibility, rewards, and the key differences so you can choose with confidence.</p>
+    <h1>Investec vs Discovery Purple Card:<br>The Honest Comparison (2026)</h1>
+    <p style="color:rgba(255,255,255,.65);max-width:580px;margin-top:14px;line-height:1.75;">Both banks target high-net-worth South Africans, but from entirely different philosophies. We break down fees, eligibility, rewards, and the key differences so you can choose with confidence.</p>
     <div class="page-hero-meta">By the Bank Investec Editorial Team &middot; Last updated: March 2026 &middot; Not affiliated with Investec or Discovery</div>
   </div>
 </section>
 
 <!-- Verdict -->
-<section class="section">
+<section class="section section-white">
   <div class="container">
     <div class="verdict-box">
       <div class="verdict-header">
         <div class="verdict-badge">Our Verdict</div>
-        <div class="verdict-title">These two banks are built for entirely different clients</div>
+        <div class="verdict-title">Both banks are exclusive — but built on fundamentally different philosophies</div>
       </div>
       <div class="verdict-body">
-        <p>Comparing Investec and Discovery Bank is less like comparing two rivals and more like comparing two different philosophies of banking. <strong>Investec is a genuine private bank</strong> — exclusive by design, with an income threshold that limits membership to South Africa's highest earners, and a service model built around a dedicated private banker, global travel, and sophisticated financial solutions.</p>
+        <p>Contrary to popular perception, the Discovery Purple Card is not a mass-market product. It requires an annual income of <strong>R2.5 million or more</strong> — making it more exclusive than Investec's R800,000 threshold. Both banks are targeting South Africa's highest earners, but they reward them in very different ways.</p>
         <br>
-        <p><strong>Discovery Bank</strong> occupies a different space entirely — it is a behaviour-linked digital bank that rewards healthy financial habits through its Vitality Money programme. Discovery is accessible to a much broader audience, with card tiers starting at R115/month, no income minimum, and a compelling rewards system for those engaged with the Discovery ecosystem.</p>
+        <p><strong>Investec gives you everything included</strong> in one transparent fee with no behavioural conditions attached. The R675/month covers 1,100+ airport lounges, a multicurrency card, a dedicated private banker, and all banking services — no conditions, no monthly spend targets, no ecosystem requirements.</p>
         <br>
-        <p>Our verdict: <strong>if you qualify for Investec</strong> (R800,000+ income), the private banking experience, global capabilities, and all-inclusive fee structure are superior to anything Discovery Bank offers at its upper tiers. <strong>If you earn below R800,000</strong>, Discovery Bank's fee discount system and Vitality Money integration may offer better value than you'd expect.</p>
+        <p><strong>Discovery Purple's best features are conditional.</strong> Airport lounge access requires spending at least R3,150 in the prior month. The 75% flight discount requires a R250,000+ average monthly positive balance and active Discovery Health and Vitality membership. The annual card fee rebate of R4,000 requires a R1 million+ average daily balance. If you maintain all these conditions and are deeply embedded in the Discovery ecosystem, the Purple Card can deliver exceptional value. If not, the complexity and conditions may outweigh the headline benefits.</p>
+        <br>
+        <p>Our verdict: <strong>Investec is the cleaner, more transparent choice</strong> for professionals who want private banking without managing conditions. <strong>Discovery Purple suits clients</strong> who are already invested in the full Discovery ecosystem — Health, Vitality, Life, and Invest — and can maintain the qualifying balances to unlock the headline benefits.</p>
       </div>
     </div>
 
     <!-- Fees -->
     <div class="cmp-section">
       <h2>Monthly Fees &amp; Account Costs</h2>
-      <p class="cmp-sub">The two banks differ fundamentally in how they price their accounts — and who can access them.</p>
+      <p class="cmp-sub">The two banks differ significantly in how they structure pricing — and what you actually pay.</p>
       <div class="table-wrap">
         <table class="cmp-table">
           <thead>
             <tr>
               <th>Fee</th>
               <th class="col-inv">Investec</th>
-              <th class="col-disc">Discovery Bank</th>
+              <th class="col-disc">Discovery Purple Card</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Entry-level monthly fee</td><td>R675 (one tier)</td><td class="val-good">From R115 (Gold)</td></tr>
-            <tr><td>Top-tier monthly fee</td><td>R675 all-inclusive</td><td>R495 (Purple)</td></tr>
-            <tr><td>Young Professional rate</td><td class="val-good">R340/month (under 30)</td><td>No equivalent</td></tr>
-            <tr><td>Fee discounts available</td><td>No discount programme</td><td class="val-good">Up to 75% via Vitality Money</td></tr>
-            <tr><td>Potential fee if discounted</td><td>R675 (fixed)</td><td class="val-good">As low as R0 at Diamond status</td></tr>
-            <tr><td>Free local ATM withdrawals</td><td><span class="chk-yes">✓</span> Unlimited</td><td><span class="chk-part">Varies by tier</span></td></tr>
-            <tr><td>Free international ATMs</td><td><span class="chk-yes">✓</span></td><td><span class="chk-no">✗</span></td></tr>
-            <tr><td>Fee structure type</td><td>Single all-inclusive fee</td><td>Tiered + behaviour-linked discounts</td></tr>
+            <tr><td>Monthly account fee</td><td class="val-good">R675 all-inclusive</td><td>R510/month (account)</td></tr>
+            <tr><td>Vitality Money premium</td><td><span class="chk-no">Not applicable</span></td><td>R100/month (required)</td></tr>
+            <tr><td>Credit facility fee</td><td><span class="chk-no">Not applicable</span></td><td>R69/month</td></tr>
+            <tr><td>Total monthly bundled fee</td><td class="val-good">R675 all-in</td><td>R679/month (bundled)</td></tr>
+            <tr><td>Annual card fee</td><td class="val-good">None</td><td>R4,000/year</td></tr>
+            <tr><td>Annual card fee rebate</td><td>Not applicable</td><td><span class="chk-part">Rebated if R1m+ avg daily balance</span></td></tr>
+            <tr><td>Young Professional rate</td><td class="val-good">R340/month (under 30)</td><td><span class="chk-no">Not available</span></td></tr>
+            <tr><td>Free local ATM withdrawals</td><td><span class="chk-yes">✓ Unlimited</span></td><td><span class="chk-yes">✓ Unlimited</span></td></tr>
+            <tr><td>Free international ATMs</td><td><span class="chk-yes">✓</span></td><td><span class="chk-yes">✓</span></td></tr>
+            <tr><td>Fee structure type</td><td>Single all-inclusive fee</td><td>Bundled fee + annual card fee + conditions</td></tr>
           </tbody>
         </table>
       </div>
@@ -267,22 +305,24 @@
     <!-- Eligibility -->
     <div class="cmp-section">
       <h2>Eligibility &amp; Access</h2>
-      <p class="cmp-sub">Who can bank with each institution — and how easy is it to get in?</p>
+      <p class="cmp-sub">Who qualifies for each bank — and the income thresholds required.</p>
       <div class="table-wrap">
         <table class="cmp-table">
           <thead>
             <tr>
               <th>Criterion</th>
               <th class="col-inv">Investec</th>
-              <th class="col-disc">Discovery Bank</th>
+              <th class="col-disc">Discovery Purple Card</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Income minimum</td><td>R800,000+ p.a. (over 30)</td><td class="val-good">No income minimum</td></tr>
-            <tr><td>Qualification required</td><td>Yes — professional qualification</td><td class="val-good">No</td></tr>
-            <tr><td>Young Professional access</td><td class="val-good">R600,000+ p.a. (under 30)</td><td class="val-good">Available (various tiers)</td></tr>
+            <tr><td>Minimum annual income</td><td>R800,000+ p.a. (over 30)</td><td>R2.5 million+ p.a.</td></tr>
+            <tr><td>Minimum monthly income</td><td>R66,667+/month</td><td>R250,000+/month</td></tr>
+            <tr><td>Professional qualification</td><td>Yes, required</td><td>Not specified (income-based)</td></tr>
+            <tr><td>Young Professional access</td><td class="val-good">R600,000+ p.a. (under 30)</td><td><span class="chk-no">Not available</span></td></tr>
             <tr><td>Digital sign-up</td><td><span class="chk-yes">✓</span></td><td><span class="chk-yes">✓</span></td></tr>
-            <tr><td>Target market</td><td>High-income professionals</td><td class="val-good">Mass-premium to affluent</td></tr>
+            <tr><td>Target market</td><td>High-income qualified professionals</td><td>Ultra-high-net-worth individuals</td></tr>
+            <tr><td>Most accessible to</td><td class="val-good">R800k–R2.5m earners</td><td>R2.5m+ earners only</td></tr>
           </tbody>
         </table>
       </div>
@@ -298,47 +338,55 @@
             <tr>
               <th>Feature</th>
               <th class="col-inv">Investec Rewards</th>
-              <th class="col-disc">Discovery Miles</th>
+              <th class="col-disc">Discovery Miles + Vitality Money</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Programme fee</td><td class="val-good">Free</td><td>Included in account fee</td></tr>
-            <tr><td>Earn mechanism</td><td>Per transaction &amp; balance</td><td>Spend + Vitality Money behaviours</td></tr>
-            <tr><td>Earn rate (transactions)</td><td>1 pt per R20</td><td>Varies by Vitality status</td></tr>
+            <tr><td>Programme fee</td><td class="val-good">Free (included)</td><td>R100/month Vitality Money premium</td></tr>
+            <tr><td>Earn on transactions</td><td>1 pt per R20 spent</td><td>Discovery Miles (variable by category)</td></tr>
+            <tr><td>Earn on balances</td><td class="val-good">1 pt per R2,000 balance</td><td>Interest: 5.5% (transactions) / 6.5% (savings)</td></tr>
             <tr><td>Points expiry</td><td class="val-good">Never expire</td><td>Expire if not maintained</td></tr>
             <tr><td>Points cap</td><td class="val-good">No cap</td><td>Cap per category</td></tr>
             <tr><td>Behaviour-linked rewards</td><td><span class="chk-no">✗</span></td><td class="val-good">✓ Vitality Money (5 categories)</td></tr>
+            <tr><td>HealthyFood rewards</td><td><span class="chk-no">✗</span></td><td class="val-good">Up to 75% back</td></tr>
+            <tr><td>Fuel rewards</td><td><span class="chk-no">✗</span></td><td class="val-good">Up to 20% back</td></tr>
             <tr><td>Redeem for cash</td><td><span class="chk-yes">✓</span></td><td><span class="chk-yes">✓</span></td></tr>
             <tr><td>Redeem for travel</td><td><span class="chk-yes">✓</span></td><td><span class="chk-yes">✓</span></td></tr>
             <tr><td>Airline miles</td><td>British Airways Avios</td><td>Discovery Miles partners</td></tr>
-            <tr><td>Fee discount via rewards</td><td><span class="chk-no">✗</span></td><td class="val-good">✓ Up to 75% fee reduction</td></tr>
-            <tr><td>Savings rate boost via rewards</td><td><span class="chk-no">✗</span></td><td class="val-good">✓ Up to 7.35% dynamic rate</td></tr>
+            <tr><td>Flight discounts</td><td><span class="chk-no">✗</span></td><td><span class="chk-part">75% off 2 business class flights/year*</span></td></tr>
+            <tr><td>Refer a friend reward</td><td class="val-good">R3,750 per successful referral</td><td><span class="chk-no">Not available</span></td></tr>
           </tbody>
         </table>
       </div>
+      <p style="font-size:12px;color:var(--text-light);margin-top:10px;">*75% flight discount requires active Discovery Health + Vitality Money membership and R250,000+ average monthly positive balance.</p>
     </div>
 
     <!-- Travel & Lounges -->
     <div class="cmp-section">
       <h2>Travel Benefits &amp; Airport Lounges</h2>
-      <p class="cmp-sub">For those who travel frequently, this comparison is decisive.</p>
+      <p class="cmp-sub">For those who travel frequently, the lounge conditions are a key differentiator.</p>
       <div class="table-wrap">
         <table class="cmp-table">
           <thead>
             <tr>
               <th>Feature</th>
               <th class="col-inv">Investec</th>
-              <th class="col-disc">Discovery Bank</th>
+              <th class="col-disc">Discovery Purple Card</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Airport lounge access</td><td class="val-good">1,100+ worldwide (InTransit)</td><td>Selected lounges (top tiers)</td></tr>
-            <tr><td>Lounge visits</td><td class="val-good">Unlimited, no caps</td><td>Limited per year</td></tr>
+            <tr><td>Airport lounge network</td><td class="val-good">1,100+ worldwide (InTransit)</td><td>The Lounge (Platinum section)</td></tr>
+            <tr><td>Lounge spend requirement</td><td class="val-good">None — always included</td><td>Min R3,150 spend in prior month required</td></tr>
+            <tr><td>Unlimited lounge visits</td><td class="val-good">Yes, no cap ever</td><td><span class="chk-part">Only if R23,600+/month spend</span></td></tr>
+            <tr><td>Limited free visits (lower spend)</td><td>Not applicable</td><td>2 local + 1 international (if R3,150–R23,599/month)</td></tr>
+            <tr><td>Faster security clearance</td><td><span class="chk-no">✗</span></td><td class="val-good">✓ OR Tambo &amp; Cape Town International</td></tr>
+            <tr><td>Lounge booking app</td><td class="val-good">InTransit app</td><td>Discovery Bank app</td></tr>
             <tr><td>Private travel agency</td><td><span class="chk-yes">✓</span> Exclusive, bespoke</td><td><span class="chk-no">✗</span></td></tr>
-            <tr><td>Complimentary travel insurance</td><td><span class="chk-yes">✓</span> On ticket purchase</td><td><span class="chk-part">✓</span> Varies by tier</td></tr>
-            <tr><td>Multi-currency card</td><td class="val-good">✓ GBP/USD/EUR/ZAR</td><td><span class="chk-no">✗</span></td></tr>
-            <tr><td>International ATM (free)</td><td><span class="chk-yes">✓</span></td><td><span class="chk-no">✗</span></td></tr>
-            <tr><td>UK bank account</td><td><span class="chk-yes">✓</span></td><td><span class="chk-no">✗</span></td></tr>
+            <tr><td>Complimentary travel insurance</td><td><span class="chk-yes">✓</span> On ticket purchase</td><td><span class="chk-yes">✓</span> Per terms</td></tr>
+            <tr><td>Multi-currency card (single card)</td><td class="val-good">✓ GBP/USD/EUR/ZAR</td><td><span class="chk-no">✗</span> Not available</td></tr>
+            <tr><td>Complimentary forex accounts</td><td><span class="chk-yes">✓</span></td><td class="val-good">✓ USD, GBP, EUR</td></tr>
+            <tr><td>International ATM withdrawals</td><td><span class="chk-yes">✓ Free</span></td><td><span class="chk-yes">✓ Free</span></td></tr>
+            <tr><td>UK private bank account</td><td class="val-good">✓ Add-on available</td><td><span class="chk-no">✗</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -347,26 +395,29 @@
     <!-- Banking Services -->
     <div class="cmp-section">
       <h2>Banking Services &amp; Products</h2>
-      <p class="cmp-sub">The depth of financial services each bank provides.</p>
+      <p class="cmp-sub">The depth of financial services and banking features available to clients.</p>
       <div class="table-wrap">
         <table class="cmp-table">
           <thead>
             <tr>
               <th>Feature</th>
               <th class="col-inv">Investec</th>
-              <th class="col-disc">Discovery Bank</th>
+              <th class="col-disc">Discovery Purple Card</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Dedicated private banker</td><td><span class="chk-yes">✓</span> 24/7</td><td><span class="chk-no">✗</span> Digital only</td></tr>
-            <tr><td>Physical banking presence</td><td><span class="chk-part">Private banking suites</span></td><td><span class="chk-no">✗</span> App only</td></tr>
-            <tr><td>Savings account / interest</td><td><span class="chk-yes">✓</span></td><td class="val-good">✓ Up to 7.35% dynamic rate</td></tr>
+            <tr><td>Dedicated private banker</td><td><span class="chk-yes">✓</span> 24/7</td><td><span class="chk-yes">✓</span> Relationship Banker</td></tr>
+            <tr><td>Concierge service</td><td><span class="chk-yes">✓</span> Private travel desk</td><td class="val-good">✓ Discovery Purple Concierge team</td></tr>
+            <tr><td>Physical banking presence</td><td><span class="chk-part">Private banking suites</span></td><td><span class="chk-no">✗</span> App-only</td></tr>
+            <tr><td>Transaction account interest</td><td><span class="chk-yes">✓</span></td><td class="val-good">5.5% dynamic rate</td></tr>
+            <tr><td>Savings / demand account interest</td><td><span class="chk-yes">✓</span></td><td class="val-good">Up to 6.5% dynamic rate</td></tr>
+            <tr><td>Secured credit facility</td><td><span class="chk-yes">✓</span></td><td class="val-good">R250,000–R5,000,000</td></tr>
             <tr><td>Investment platform</td><td class="val-good">My Investments — full suite</td><td><span class="chk-part">Limited</span></td></tr>
             <tr><td>Home loans</td><td><span class="chk-yes">✓</span></td><td><span class="chk-yes">✓</span></td></tr>
             <tr><td>Vehicle finance</td><td class="val-good">Prime minus 1%</td><td><span class="chk-yes">✓</span></td></tr>
             <tr><td>Family banking</td><td><span class="chk-yes">✓</span> Reduced fee</td><td><span class="chk-yes">✓</span></td></tr>
-            <tr><td>Integration with health product</td><td><span class="chk-no">✗</span></td><td class="val-good">✓ Discovery Health + Vitality</td></tr>
-            <tr><td>Banking app</td><td><span class="chk-yes">✓</span> Investec App</td><td><span class="chk-yes">✓</span> Discovery Bank App (4.7/5)</td></tr>
+            <tr><td>Integration with health &amp; life products</td><td><span class="chk-no">✗</span></td><td class="val-good">✓ Discovery Health, Vitality &amp; Life</td></tr>
+            <tr><td>Banking app</td><td><span class="chk-yes">✓</span> Investec App</td><td><span class="chk-yes">✓</span> Discovery Bank App</td></tr>
             <tr><td>Award — Bank of the Year</td><td class="val-good">✓ 2025 (The Banker)</td><td><span class="chk-no">✗</span></td></tr>
           </tbody>
         </table>
@@ -379,25 +430,27 @@
       <div class="who-card inv">
         <h3>Choose <em>Investec</em> if you…</h3>
         <div class="who-list">
-          <div class="who-item">Earn R800,000+ per year and want a true private banking experience</div>
-          <div class="who-item">Travel internationally and want access to 1,100+ airport lounges with no visit cap</div>
-          <div class="who-item">Transact in foreign currencies regularly and want one multicurrency card</div>
-          <div class="who-item">Want a dedicated private banker for personalised financial advice</div>
-          <div class="who-item">Are a young professional under 30 looking for R340/month with full private banking</div>
-          <div class="who-item">Want simple, transparent all-inclusive pricing with no behavioural conditions</div>
-          <div class="who-item">Want or may want a UK bank account as your financial position grows</div>
+          <div class="who-item">Earn R800,000+ per year and want a true private banking experience without complex conditions</div>
+          <div class="who-item">Travel internationally and want access to 1,100+ airport lounges with no visit cap and no spend requirement</div>
+          <div class="who-item">Transact in foreign currencies regularly and want one multicurrency card (GBP/USD/EUR/ZAR)</div>
+          <div class="who-item">Want a dedicated private banker available 24/7 for personalised financial advice</div>
+          <div class="who-item">Are a young professional under 30 looking for R340/month with full private banking benefits</div>
+          <div class="who-item">Want simple, transparent all-inclusive pricing with no behavioural conditions or monthly spend targets</div>
+          <div class="who-item">Want or may need a UK private bank account as your financial position grows</div>
+          <div class="who-item">Want to earn R3,750 per referral by introducing friends and colleagues to private banking</div>
         </div>
         <a href="https://referrals.secure.investec.com/apply/FYmhJw" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:22px;width:100%;justify-content:center;">Apply for Investec</a>
       </div>
       <div class="who-card disc">
-        <h3>Consider <em>Discovery Bank</em> if you…</h3>
+        <h3>Consider <em>Discovery Purple Card</em> if you…</h3>
         <div class="who-list">
-          <div class="who-item">Earn below R800,000 and don't meet Investec's eligibility criteria</div>
-          <div class="who-item">Are already embedded in the Discovery ecosystem (Health, Life, Vitality)</div>
-          <div class="who-item">Can actively engage Vitality Money behaviours to earn significant fee discounts</div>
-          <div class="who-item">Want a high dynamic savings rate (up to 7.35%) linked to healthy financial habits</div>
-          <div class="who-item">Prefer a fully digital bank with no branches or private banker interaction</div>
-          <div class="who-item">Want a lower starting fee (R115/month Gold) while building toward higher tiers</div>
+          <div class="who-item">Earn R2.5 million+ per year and qualify for Discovery's ultra-premium tier</div>
+          <div class="who-item">Are already deeply embedded in the full Discovery ecosystem — Health, Vitality, Life, and Invest</div>
+          <div class="who-item">Can maintain R250,000+ average monthly positive balance to unlock flight discounts and R1m+ for card fee rebate</div>
+          <div class="who-item">Can spend R23,600+/month to access unlimited lounge visits, or at least R3,150/month for limited access</div>
+          <div class="who-item">Value Vitality Money behaviours (HealthyFood, fuel, HealthyCare rewards) and actively engage them</div>
+          <div class="who-item">Want the 6.5% dynamic savings rate and are willing to maintain the qualifying conditions</div>
+          <div class="who-item">Prefer a fully app-based banking experience with Vitality-integrated rewards rather than traditional private banking</div>
         </div>
       </div>
     </div>
@@ -411,10 +464,10 @@
       <div class="cta-inner">
         <div class="badge badge-gold" style="margin-bottom:16px;">Ready for private banking?</div>
         <h2>Open your <em>Investec Private Bank Account</em></h2>
-        <p>If you qualify, Investec offers a private banking experience that Discovery Bank simply cannot match. Apply through our secure referral link today.</p>
+        <p>If you qualify, Investec offers an all-inclusive private banking experience with no spend conditions, no complex ecosystem requirements, and the industry's most recognised private banking service in SA.</p>
         <div class="cta-actions">
           <a href="https://referrals.secure.investec.com/apply/FYmhJw" target="_blank" rel="noopener" class="btn btn-gold">Apply via Referral Link &rarr;</a>
-          <a href="vs-rmb.html" class="btn btn-outline">Compare vs RMB Private Bank</a>
+          <a href="vs-rmb.html" class="btn btn-outline">Compare vs RMB Private Account</a>
         </div>
         <p class="cta-disc">Not affiliated with Investec Limited or Discovery Limited. We may earn a referral reward when you apply via our link.</p>
       </div>
@@ -449,14 +502,41 @@
     </div>
     <div class="footer-bottom">
       <div class="footer-copy">&copy; 2026 Bank Investec. All rights reserved.</div>
-      <div class="footer-legal">This site is independent and not affiliated with Investec Limited or Discovery Limited. Discovery Bank data sourced from publicly available information. Verify all fees and features directly with the respective bank before making a financial decision.</div>
+      <div class="footer-legal">This site is independent and not affiliated with Investec Limited or Discovery Limited. Discovery Purple Card data sourced from publicly available information (2025/2026). Verify all fees, conditions, and features directly with Discovery Bank before making a financial decision.</div>
     </div>
   </div>
 </footer>
 
 <script>
+  function updateThemeIcon() {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.getElementById('moonIcon').style.display = isDark ? 'none' : 'block';
+    document.getElementById('sunIcon').style.display = isDark ? 'block' : 'none';
+  }
+  function toggleTheme() {
+    var html = document.documentElement;
+    var isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? '' : 'dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    updateThemeIcon();
+  }
+  (function() {
+    var savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme === 'dark' ? 'dark' : '');
+    updateThemeIcon();
+  })();
+  function toggleDropdown(e, id) {
+    e.stopPropagation();
+    var menu = document.getElementById(id);
+    var isOpen = menu.classList.contains('open');
+    document.querySelectorAll('.nav-dd-menu').forEach(function(m) { m.classList.remove('open'); });
+    if (!isOpen) menu.classList.add('open');
+  }
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.nav-dd-menu').forEach(function(m) { m.classList.remove('open'); });
+  });
   function toggleNav() {
-    const n = document.getElementById('mNav');
+    var n = document.getElementById('mNav');
     n.style.display = n.style.display === 'block' ? 'none' : 'block';
   }
 </script>
