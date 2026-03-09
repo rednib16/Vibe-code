@@ -1,18 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Investec vs RMB Private Bank: The Honest Comparison (2026) | Bank Investec</title>
-  <meta name="description" content="Investec vs RMB Private Bank compared head-to-head. Fees, airport lounges, rewards, eligibility, and our verdict on which private bank is right for you.">
-  <meta property="og:title" content="Investec vs RMB Private Bank: The Honest Comparison (2026)">
-  <meta property="og:description" content="A detailed, unbiased comparison of Investec and RMB Private Bank — fees, rewards, lounges, and our verdict.">
+  <title>Investec vs RMB Private Account: Full 2026 Comparison | Bank Investec</title>
+  <meta name="description" content="Investec Private Banking vs RMB Private Account compared head-to-head. Fees, airport lounges, rewards, eligibility, and our verdict on which private bank is right for you.">
+  <meta property="og:title" content="Investec vs RMB Private Account: Full 2026 Comparison | Bank Investec">
+  <meta property="og:description" content="A detailed, unbiased comparison of Investec and RMB Private Account: fees, rewards, lounges, and our verdict.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://bankinvestec.co.za/vs-rmb.html">
   <link rel="canonical" href="https://bankinvestec.co.za/vs-rmb.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-CONVERSION_ID');
+  </script>
   <style>
     :root {
       --accent:        #1E6B43;
@@ -32,14 +40,32 @@
       --gold-light:    #FAF4E6;
       --gold-border:   #E0CC90;
       --rmb-color:     #D4001A;
+      --rmb-light:     #FFF4F5;
       --nav-h:         64px;
+      --card-bg:       #FFFFFF;
+      --shadow:        rgba(0,0,0,0.08);
+    }
+    [data-theme="dark"] {
+      --page-bg:       #0A1710;
+      --white:         #112A1B;
+      --card-bg:       #152B1E;
+      --text:          #E8F0EB;
+      --text-muted:    #8AB89C;
+      --text-light:    #6A9A7A;
+      --border:        #1F3A28;
+      --accent-light:  #152B1E;
+      --accent-border: #1E3D28;
+      --gold-light:    #1E1A08;
+      --gold-border:   #3D3210;
+      --shadow:        rgba(0,0,0,0.3);
+      --rmb-light:     #1F0508;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; font-size: 15px; color: var(--text); background: var(--white); line-height: 1.65; }
+    body { font-family: 'Inter', sans-serif; font-size: 15px; color: var(--text); background: var(--page-bg); line-height: 1.65; transition: background .25s, color .25s; }
     a { color: inherit; text-decoration: none; }
     .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 8px; font-weight: 700; font-size: 15px; cursor: pointer; transition: all .2s; border: none; font-family: inherit; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 8px; font-weight: 700; font-size: 15px; cursor: pointer; transition: all .2s; border: none; font-family: inherit; min-height: 48px; }
     .btn-primary { background: var(--accent); color: #fff; }
     .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); box-shadow: 0 4px 18px rgba(30,107,67,.35); }
     .btn-gold { background: var(--gold); color: #fff; }
@@ -48,35 +74,44 @@
     .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.09); }
     .section { padding: 64px 0; }
     .section-alt { background: var(--page-bg); }
+    .section-white { background: var(--white); }
     .badge { display: inline-block; padding: 4px 13px; border-radius: 20px; font-size: 12px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; }
     .badge-gold { background: var(--gold-light); color: var(--gold-dark); border: 1px solid var(--gold-border); }
     .badge-green { background: var(--accent-light); color: var(--accent-dark); border: 1px solid var(--accent-border); }
 
     /* Nav */
-    .nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); height: var(--nav-h); display: flex; align-items: center; }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
-    .nav-logo { font-size: 18px; font-weight: 800; color: var(--text); display: flex; align-items: center; gap: 9px; }
+    .nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); height: var(--nav-h); display: flex; align-items: center; transition: background .25s, border-color .25s; }
+    [data-theme="dark"] .nav { background: #0B1912; border-color: rgba(255,255,255,0.08); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 8px; }
+    .nav-logo { font-size: 18px; font-weight: 800; color: var(--text); display: flex; align-items: center; gap: 9px; flex-shrink: 0; }
     .logo-mark { width: 32px; height: 32px; background: var(--accent); border-radius: 7px; display: flex; align-items: center; justify-content: center; }
     .logo-mark svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
     .nav-logo em { color: var(--accent); font-style: normal; }
     .nav-links { display: flex; align-items: center; gap: 2px; }
-    .nav-links a { padding: 8px 14px; border-radius: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); transition: all .15s; }
-    .nav-links a:hover { color: var(--text); background: var(--page-bg); }
+    .nav-links a { padding: 8px 14px; border-radius: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); transition: all .15s; min-height: 40px; display: flex; align-items: center; }
+    .nav-links a:hover { color: var(--text); background: var(--accent-light); }
     .nav-dd { position: relative; }
-    .nav-dd-btn { display: flex; align-items: center; gap: 4px; padding: 8px 14px; border-radius: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); cursor: pointer; background: none; border: none; font-family: inherit; transition: all .15s; }
-    .nav-dd-btn:hover { color: var(--text); background: var(--page-bg); }
-    .nav-dd-menu { display: none; position: absolute; top: calc(100% + 8px); left: 0; background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 6px; min-width: 220px; box-shadow: 0 8px 28px rgba(0,0,0,.10); z-index: 200; }
-    .nav-dd:hover .nav-dd-menu { display: block; }
-    .nav-dd-menu a { display: block; padding: 9px 14px; border-radius: 6px; font-size: 14px; color: var(--text); transition: background .15s; }
+    .nav-dd-btn { display: flex; align-items: center; gap: 4px; padding: 8px 14px; border-radius: 6px; font-size: 14px; font-weight: 500; color: var(--text-muted); cursor: pointer; background: none; border: none; font-family: inherit; transition: all .15s; min-height: 40px; }
+    .nav-dd-btn:hover { color: var(--text); background: var(--accent-light); }
+    .nav-dd-menu { display: none; position: absolute; top: calc(100% + 8px); left: 0; background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 6px; min-width: 240px; box-shadow: 0 8px 28px var(--shadow); z-index: 200; }
+    .nav-dd-menu.open { display: block; }
+    .nav-dd-menu a { display: flex; align-items: center; padding: 10px 14px; border-radius: 6px; font-size: 14px; color: var(--text); transition: background .15s; min-height: 40px; }
     .nav-dd-menu a:hover { background: var(--accent-light); color: var(--accent); }
-    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); margin: 5px 0; border-radius: 2px; }
-    .m-nav { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0; background: var(--white); overflow-y: auto; z-index: 99; padding: 16px; }
-    .m-nav a { display: block; padding: 13px 16px; border-radius: 8px; font-size: 16px; font-weight: 500; color: var(--text); }
-    .m-nav-cta { display: block; margin-top: 16px; text-align: center; background: var(--accent); color: #fff !important; padding: 15px; border-radius: 10px; font-weight: 700; }
+    .nav-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .theme-toggle { width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .2s; color: var(--text-muted); }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+    .theme-toggle svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; min-width: 40px; min-height: 48px; align-items: center; justify-content: center; flex-direction: column; gap: 5px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
+    [data-theme="dark"] .hamburger span { background: #fff; }
+    .m-nav { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0; background: var(--white); overflow-y: auto; z-index: 99; padding: 16px; transition: background .25s; }
+    [data-theme="dark"] .m-nav { background: #0B1912; }
+    .m-nav a { display: flex; align-items: center; padding: 13px 16px; border-radius: 8px; font-size: 16px; font-weight: 500; color: var(--text); min-height: 48px; }
+    .m-nav a:hover { background: var(--accent-light); }
+    .m-nav-cta { display: block; margin-top: 16px; text-align: center; background: var(--accent); color: #fff !important; padding: 15px; border-radius: 10px; font-weight: 700; min-height: 52px; }
 
     /* Breadcrumb */
-    .breadcrumb { padding: 14px 0; font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+    .breadcrumb { padding: 14px 0; font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
     .breadcrumb a { color: var(--accent); }
     .breadcrumb-sep { opacity: .4; }
 
@@ -101,11 +136,12 @@
     .table-wrap { overflow-x: auto; border-radius: 13px; border: 1px solid var(--border); }
     .cmp-table { width: 100%; border-collapse: collapse; font-size: 14px; }
     .cmp-table th, .cmp-table td { padding: 13px 18px; text-align: left; border-bottom: 1px solid var(--border); }
-    .cmp-table thead th { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; background: var(--page-bg); white-space: nowrap; }
-    .cmp-table thead th.col-inv { background: var(--accent); color: #fff; }
-    .cmp-table thead th.col-rmb { background: var(--rmb-color); color: #fff; }
+    .cmp-table thead th { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; background: var(--page-bg); white-space: nowrap; color: var(--text); }
+    .cmp-table thead th.col-inv { background: #1E6B43; color: #fff; }
+    .cmp-table thead th.col-rmb { background: #D4001A; color: #fff; }
     .cmp-table tbody tr:last-child td { border-bottom: none; }
-    .cmp-table tbody tr:hover { background: var(--page-bg); }
+    .cmp-table tbody td { background: var(--card-bg); color: var(--text); }
+    .cmp-table tbody tr:hover td { background: var(--accent-light); }
     .val-good { color: var(--accent); font-weight: 600; }
     .chk-yes { color: var(--accent); font-weight: 700; }
     .chk-no { color: #DC2626; font-weight: 700; }
@@ -115,14 +151,14 @@
     .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     .who-card { border-radius: 14px; padding: 28px; border: 2px solid var(--border); }
     .who-card.inv { border-color: var(--accent); background: var(--accent-light); }
-    .who-card.rmb { border-color: var(--rmb-color); background: #FFF4F5; }
+    .who-card.rmb { border-color: var(--rmb-color); background: var(--rmb-light); }
     .who-card h3 { font-size: 1rem; font-weight: 800; margin-bottom: 16px; }
     .who-card h3 em { font-style: normal; }
     .who-card.inv h3 em { color: var(--accent); }
     .who-card.rmb h3 em { color: var(--rmb-color); }
     .who-list { display: flex; flex-direction: column; gap: 10px; }
-    .who-item { display: flex; align-items: flex-start; gap: 9px; font-size: 14px; color: var(--text-muted); }
-    .who-item::before { content: '✓'; font-weight: 800; flex-shrink: 0; margin-top: 0; }
+    .who-item { display: flex; align-items: flex-start; gap: 9px; font-size: 14px; color: var(--text-muted); min-height: 24px; }
+    .who-item::before { content: '&#10003;'; font-weight: 800; flex-shrink: 0; }
     .who-card.inv .who-item::before { color: var(--accent); }
     .who-card.rmb .who-item::before { color: var(--rmb-color); }
 
@@ -157,9 +193,10 @@
     }
     @media (max-width: 600px) {
       .nav-links { display: none; }
-      .hamburger { display: block; }
+      .hamburger { display: flex; }
       .footer-grid { grid-template-columns: 1fr; }
       .section { padding: 44px 0; }
+      .nav-right .btn { display: none; }
     }
   </style>
 </head>
@@ -179,19 +216,25 @@
         <a href="index.html#review">Review</a>
         <a href="index.html#features">Account</a>
         <div class="nav-dd">
-          <button class="nav-dd-btn">Compare <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
-          <div class="nav-dd-menu">
-            <a href="vs-rmb.html">Investec vs RMB Private Bank</a>
-            <a href="vs-discovery.html">Investec vs Discovery Bank</a>
+          <button class="nav-dd-btn" onclick="toggleDropdown(event,'ddMenu')" aria-haspopup="true">Compare <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <div class="nav-dd-menu" id="ddMenu" role="menu">
+            <a href="vs-rmb.html">Investec vs RMB Private Account</a>
+            <a href="vs-discovery.html">Investec vs Discovery Purple Card</a>
           </div>
         </div>
         <a href="index.html#rewards">Rewards</a>
         <a href="index.html#faq">FAQ</a>
       </div>
-      <a href="https://referrals.secure.investec.com/apply/FYmhJw" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:14px;padding:9px 20px;margin-left:10px;">Apply Now</a>
-      <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" onclick="toggleTheme()">
+          <svg id="moonIcon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg id="sunIcon" viewBox="0 0 24 24" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <a href="https://referrals.investec.com/apply/FYmhJw" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:14px;padding:9px 20px;" onclick="trackApply()">Apply Now</a>
+        <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </div>
 </nav>
@@ -199,9 +242,9 @@
 <div class="m-nav" id="mNav">
   <a href="index.html">Home</a>
   <a href="index.html#features">Account &amp; Fees</a>
-  <a href="vs-rmb.html">Investec vs RMB</a>
-  <a href="vs-discovery.html">Investec vs Discovery</a>
-  <a href="https://referrals.secure.investec.com/apply/FYmhJw" class="m-nav-cta" target="_blank" rel="noopener">Apply for Private Banking</a>
+  <a href="vs-rmb.html">Investec vs RMB Private Account</a>
+  <a href="vs-discovery.html">Investec vs Discovery Purple Card</a>
+  <a href="https://referrals.investec.com/apply/FYmhJw" class="m-nav-cta" target="_blank" rel="noopener" onclick="trackApply()">Apply for Private Banking</a>
 </div>
 
 <!-- Page Hero -->
@@ -210,17 +253,17 @@
     <div class="breadcrumb">
       <a href="index.html">Bank Investec</a>
       <span class="breadcrumb-sep">/</span>
-      <span>Investec vs RMB Private Bank</span>
+      <span>Investec vs RMB Private Account</span>
     </div>
     <div class="page-hero-tag">Head-to-Head Comparison</div>
-    <h1>Investec vs RMB Private Bank:<br>The Honest Comparison (2026)</h1>
-    <p style="color:rgba(255,255,255,.65);max-width:580px;margin-top:14px;line-height:1.75;">Both banks target high-net-worth South African professionals — but they differ meaningfully on fees, international banking, lounges, and the breadth of private banking services offered.</p>
+    <h1>Investec vs RMB Private Account:<br>The Full 2026 Comparison</h1>
+    <p style="color:rgba(255,255,255,.65);max-width:580px;margin-top:14px;line-height:1.75;">Both banks target high-net-worth South African professionals, but they differ meaningfully on fees, international banking, lounges, and the breadth of private banking services offered.</p>
     <div class="page-hero-meta">By the Bank Investec Editorial Team &middot; Last updated: March 2026 &middot; Not affiliated with Investec or FirstRand</div>
   </div>
 </section>
 
 <!-- Verdict -->
-<section class="section">
+<section class="section section-white">
   <div class="container">
     <div class="verdict-box">
       <div class="verdict-header">
@@ -228,35 +271,35 @@
         <div class="verdict-title">Investec wins for global professionals; RMB wins on fee flexibility</div>
       </div>
       <div class="verdict-body">
-        <p>Both Investec and RMB Private Bank are genuinely premium offerings targeting similar high-income South African clients. <strong>Investec edges ahead</strong> for professionals who travel frequently, transact internationally, or want a truly all-in-one private banking experience — with its multicurrency card, 1,100+ airport lounges, and the UK bank account add-on being clear differentiators.</p>
+        <p>Both Investec and RMB Private Account are genuinely premium offerings targeting similar high-income South African clients. <strong>Investec edges ahead</strong> for professionals who travel frequently, transact internationally, or want a truly all-in-one private banking experience, with its multicurrency card, 1,100+ airport lounges, and the UK bank account add-on being clear differentiators.</p>
         <br>
-        <p><strong>RMB Private Bank</strong> may suit clients who already bank with FNB and want to leverage their existing eBucks ecosystem, or those who can maintain a R200,000 account balance to waive the monthly fee entirely. RMB's integrated wealth management and lending suite is also highly regarded.</p>
+        <p><strong>RMB Private Account</strong> may suit clients who already bank with FNB and want to leverage their existing eBucks ecosystem, or those who can maintain a R200,000 account balance to waive the monthly fee entirely. RMB's integrated wealth management and lending suite is also highly regarded.</p>
         <br>
-        <p>For most ambitious South African professionals starting their private banking journey, <strong>Investec's single transparent fee and superior international features make it the stronger choice</strong> — particularly if you earn above R800,000 and travel internationally with any regularity.</p>
+        <p>For most ambitious South African professionals starting their private banking journey, <strong>Investec's single transparent fee and superior international features make it the stronger choice</strong>, particularly if you earn above R800,000 and travel internationally with any regularity.</p>
       </div>
     </div>
 
     <!-- Fees -->
     <div class="cmp-section">
       <h2>Monthly Fees &amp; Account Costs</h2>
-      <p class="cmp-sub">How the two banks structure their pricing — and what you actually pay.</p>
+      <p class="cmp-sub">How the two banks structure their pricing and what you actually pay.</p>
       <div class="table-wrap">
         <table class="cmp-table">
           <thead>
             <tr>
               <th>Fee</th>
               <th class="col-inv">Investec</th>
-              <th class="col-rmb">RMB Private Bank</th>
+              <th class="col-rmb">RMB Private Account</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Standard monthly fee</td><td class="val-good">R675 all-inclusive</td><td>~R290/month</td></tr>
-            <tr><td>Young Professional / reduced fee</td><td class="val-good">R340/month (under 30)</td><td>Not specified</td></tr>
-            <tr><td>Fee waiver option</td><td>No waiver</td><td><span class="chk-part">✓</span> Waived at R200k+ balance</td></tr>
+            <tr><td>Standard monthly fee</td><td class="val-good">R675 all-inclusive</td><td>R290/month</td></tr>
+            <tr><td>Young Professional rate</td><td class="val-good">R340/month (under 30)</td><td>Not specified</td></tr>
+            <tr><td>Fee waiver option</td><td>No waiver</td><td><span class="chk-part">Waived at R200k+ balance</span></td></tr>
             <tr><td>Spouse / partner account</td><td>Reduced family fee</td><td>R299/month (waived at R100k+ balance)</td></tr>
-            <tr><td>Free local ATM withdrawals</td><td><span class="chk-yes">✓</span> Unlimited</td><td><span class="chk-yes">✓</span> Unlimited</td></tr>
-            <tr><td>Free international ATM withdrawals</td><td><span class="chk-yes">✓</span> (Investec charge)</td><td><span class="chk-yes">✓</span></td></tr>
-            <tr><td>Unlimited transactions included</td><td><span class="chk-yes">✓</span></td><td><span class="chk-yes">✓</span></td></tr>
+            <tr><td>Free local ATM withdrawals</td><td><span class="chk-yes">Unlimited</span></td><td><span class="chk-yes">Unlimited</span></td></tr>
+            <tr><td>Free international ATM withdrawals</td><td><span class="chk-yes">Yes (Investec charge)</span></td><td><span class="chk-yes">Yes</span></td></tr>
+            <tr><td>Unlimited transactions included</td><td><span class="chk-yes">Yes</span></td><td><span class="chk-yes">Yes</span></td></tr>
             <tr><td>Fee structure transparency</td><td class="val-good">Single all-in fee</td><td>Service fee + credit facility fees</td></tr>
           </tbody>
         </table>
@@ -273,7 +316,7 @@
             <tr>
               <th>Feature</th>
               <th class="col-inv">Investec</th>
-              <th class="col-rmb">RMB Private Bank</th>
+              <th class="col-rmb">RMB Private Account</th>
             </tr>
           </thead>
           <tbody>
@@ -281,9 +324,9 @@
             <tr><td>Local SA lounges</td><td class="val-good">Included in 1,100+</td><td>SLOW Lounges + Bidvest Premier</td></tr>
             <tr><td>Lounge booking app</td><td class="val-good">InTransit app</td><td>Priority Pass app</td></tr>
             <tr><td>Visit caps</td><td class="val-good">Unlimited</td><td>Check terms</td></tr>
-            <tr><td>Complimentary travel insurance</td><td><span class="chk-yes">✓</span> On ticket purchase</td><td>Check terms</td></tr>
-            <tr><td>Private travel agency</td><td><span class="chk-yes">✓</span> Exclusive access</td><td><span class="chk-part">✓</span> Lifestyle assistant</td></tr>
-            <tr><td>Bespoke travel itineraries</td><td><span class="chk-yes">✓</span></td><td><span class="chk-part">Limited</span></td></tr>
+            <tr><td>Complimentary travel insurance</td><td><span class="chk-yes">Yes (on ticket purchase)</span></td><td>Check terms</td></tr>
+            <tr><td>Private travel agency</td><td><span class="chk-yes">Yes, exclusive access</span></td><td><span class="chk-part">Lifestyle assistant</span></td></tr>
+            <tr><td>Bespoke travel itineraries</td><td><span class="chk-yes">Yes</span></td><td><span class="chk-part">Limited</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -299,15 +342,15 @@
             <tr>
               <th>Feature</th>
               <th class="col-inv">Investec</th>
-              <th class="col-rmb">RMB Private Bank</th>
+              <th class="col-rmb">RMB Private Account</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Multi-currency card</td><td class="val-good">✓ GBP, USD, EUR, ZAR</td><td><span class="chk-no">✗</span> Not available</td></tr>
-            <tr><td>Intelligent currency routing</td><td class="val-good">✓ Automatic</td><td><span class="chk-no">✗</span></td></tr>
-            <tr><td>UK bank account</td><td class="val-good">✓ Add-on (GBP 1,000 min)</td><td><span class="chk-no">✗</span></td></tr>
-            <tr><td>Offshore investment access</td><td><span class="chk-yes">✓</span></td><td><span class="chk-yes">✓</span> Global solutions</td></tr>
-            <tr><td>Foreign currency accounts</td><td><span class="chk-yes">✓</span></td><td><span class="chk-yes">✓</span></td></tr>
+            <tr><td>Multi-currency card</td><td class="val-good">Yes: GBP, USD, EUR, ZAR</td><td><span class="chk-no">Not available</span></td></tr>
+            <tr><td>Intelligent currency routing</td><td class="val-good">Yes, automatic</td><td><span class="chk-no">No</span></td></tr>
+            <tr><td>UK bank account</td><td class="val-good">Yes, add-on (GBP 1,000 min)</td><td><span class="chk-no">No</span></td></tr>
+            <tr><td>Offshore investment access</td><td><span class="chk-yes">Yes</span></td><td><span class="chk-yes">Yes, global solutions</span></td></tr>
+            <tr><td>Foreign currency accounts</td><td><span class="chk-yes">Yes</span></td><td><span class="chk-yes">Yes</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -332,9 +375,9 @@
             <tr><td>Earn on balances</td><td class="val-good">1 pt per R2,000 balance</td><td>Fee rebate via eBucks</td></tr>
             <tr><td>Points expiry</td><td class="val-good">Never expire</td><td>Check eBucks terms</td></tr>
             <tr><td>Points cap</td><td class="val-good">No cap</td><td>Tiered earning limits</td></tr>
-            <tr><td>Redeem for cash</td><td><span class="chk-yes">✓</span></td><td><span class="chk-yes">✓</span></td></tr>
-            <tr><td>Redeem for travel</td><td><span class="chk-yes">✓</span></td><td><span class="chk-yes">✓</span></td></tr>
-            <tr><td>Redeem for investments</td><td><span class="chk-yes">✓</span></td><td>Limited</td></tr>
+            <tr><td>Redeem for cash</td><td><span class="chk-yes">Yes</span></td><td><span class="chk-yes">Yes</span></td></tr>
+            <tr><td>Redeem for travel</td><td><span class="chk-yes">Yes</span></td><td><span class="chk-yes">Yes</span></td></tr>
+            <tr><td>Redeem for investments</td><td><span class="chk-yes">Yes</span></td><td>Limited</td></tr>
             <tr><td>Airline miles redemption</td><td class="val-good">British Airways Avios</td><td>Various partners</td></tr>
           </tbody>
         </table>
@@ -351,17 +394,17 @@
             <tr>
               <th>Feature</th>
               <th class="col-inv">Investec</th>
-              <th class="col-rmb">RMB Private Bank</th>
+              <th class="col-rmb">RMB Private Account</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Dedicated private banker</td><td><span class="chk-yes">✓</span> 24/7</td><td><span class="chk-yes">✓</span> Private advisor</td></tr>
-            <tr><td>Wealth management</td><td><span class="chk-yes">✓</span></td><td><span class="chk-yes">✓</span></td></tr>
-            <tr><td>Investment platform</td><td class="val-good">My Investments (digital)</td><td><span class="chk-yes">✓</span> Stockbroking &amp; more</td></tr>
-            <tr><td>Estate &amp; succession planning</td><td><span class="chk-yes">✓</span></td><td><span class="chk-yes">✓</span> Specialist team</td></tr>
-            <tr><td>Structured lending</td><td><span class="chk-yes">✓</span></td><td><span class="chk-yes">✓</span> Full suite</td></tr>
-            <tr><td>Vehicle finance</td><td class="val-good">Prime minus 1%</td><td><span class="chk-yes">✓</span></td></tr>
-            <tr><td>Home loans</td><td><span class="chk-yes">✓</span></td><td><span class="chk-yes">✓</span> Specialist pricing</td></tr>
+            <tr><td>Dedicated private banker</td><td><span class="chk-yes">Yes, 24/7</span></td><td><span class="chk-yes">Yes, private advisor</span></td></tr>
+            <tr><td>Wealth management</td><td><span class="chk-yes">Yes</span></td><td><span class="chk-yes">Yes</span></td></tr>
+            <tr><td>Investment platform</td><td class="val-good">My Investments (digital)</td><td><span class="chk-yes">Yes, stockbroking and more</span></td></tr>
+            <tr><td>Estate &amp; succession planning</td><td><span class="chk-yes">Yes</span></td><td><span class="chk-yes">Yes, specialist team</span></td></tr>
+            <tr><td>Structured lending</td><td><span class="chk-yes">Yes</span></td><td><span class="chk-yes">Yes, full suite</span></td></tr>
+            <tr><td>Vehicle finance</td><td class="val-good">Prime minus 1%</td><td><span class="chk-yes">Yes</span></td></tr>
+            <tr><td>Home loans</td><td><span class="chk-yes">Yes</span></td><td><span class="chk-yes">Yes, specialist pricing</span></td></tr>
             <tr><td>Insurance</td><td class="val-good">Pinion (via Aon SA)</td><td>AA Roadside + partners</td></tr>
             <tr><td>Young Professional benefits</td><td class="val-good">R340/month + R25k life insurance</td><td>Standard rate applies</td></tr>
           </tbody>
@@ -379,7 +422,7 @@
             <tr>
               <th>Criterion</th>
               <th class="col-inv">Investec</th>
-              <th class="col-rmb">RMB Private Bank</th>
+              <th class="col-rmb">RMB Private Account</th>
             </tr>
           </thead>
           <tbody>
@@ -396,20 +439,20 @@
     <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:20px;">Who should choose which bank?</h2>
     <div class="who-grid">
       <div class="who-card inv">
-        <h3>Choose <em>Investec</em> if you…</h3>
+        <h3>Choose <em>Investec</em> if you...</h3>
         <div class="who-list">
-          <div class="who-item">Travel internationally regularly and want 1,100+ airport lounges</div>
+          <div class="who-item">Travel internationally regularly and want 1,100+ airport lounges with no visit cap</div>
           <div class="who-item">Transact in foreign currencies and want a multicurrency card</div>
           <div class="who-item">Want a truly all-inclusive fee with no surprise charges</div>
-          <div class="who-item">Are a young professional under 30 and want the Young Professional rate</div>
+          <div class="who-item">Are a young professional under 30 and want the Young Professional rate of R340/month</div>
           <div class="who-item">Want or may need a UK bank account in future</div>
           <div class="who-item">Prefer the simplicity of one transparent monthly fee</div>
           <div class="who-item">Value 13 years of consistent private banking recognition</div>
         </div>
-        <a href="https://referrals.secure.investec.com/apply/FYmhJw" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:22px;width:100%;justify-content:center;">Apply for Investec</a>
+        <a href="https://referrals.investec.com/apply/FYmhJw" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:22px;width:100%;justify-content:center;" onclick="trackApply()">Apply for Investec</a>
       </div>
       <div class="who-card rmb">
-        <h3>Consider <em>RMB Private Bank</em> if you…</h3>
+        <h3>Consider <em>RMB Private Account</em> if you...</h3>
         <div class="who-list">
           <div class="who-item">Already bank with FNB and want to leverage your eBucks earnings</div>
           <div class="who-item">Can maintain R200,000+ in your account to waive the monthly fee entirely</div>
@@ -432,8 +475,8 @@
         <h2>Open your <em>Investec Private Bank Account</em></h2>
         <p>Apply directly through our secure referral link. Investec's team will be in touch to guide you through onboarding.</p>
         <div class="cta-actions">
-          <a href="https://referrals.secure.investec.com/apply/FYmhJw" target="_blank" rel="noopener" class="btn btn-gold">Apply via Referral Link &rarr;</a>
-          <a href="vs-discovery.html" class="btn btn-outline">Compare vs Discovery Bank</a>
+          <a href="https://referrals.investec.com/apply/FYmhJw" target="_blank" rel="noopener" class="btn btn-gold" onclick="trackApply()">Apply via Referral Link &rarr;</a>
+          <a href="vs-discovery.html" class="btn btn-outline">Compare vs Discovery Purple Card</a>
         </div>
         <p class="cta-disc">Not affiliated with Investec Limited or FirstRand Group. We may earn a referral reward when you apply via our link.</p>
       </div>
@@ -455,27 +498,59 @@
           <li><a href="index.html#review">Full Review</a></li>
           <li><a href="index.html#features">Account &amp; Fees</a></li>
           <li><a href="index.html#rewards">Rewards</a></li>
-          <li><a href="https://referrals.secure.investec.com/apply/FYmhJw" target="_blank" rel="noopener">Apply Now</a></li>
+          <li><a href="https://referrals.investec.com/apply/FYmhJw" target="_blank" rel="noopener" onclick="trackApply()">Apply Now</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Compare</h4>
         <ul>
-          <li><a href="vs-rmb.html">Investec vs RMB</a></li>
-          <li><a href="vs-discovery.html">Investec vs Discovery</a></li>
+          <li><a href="vs-rmb.html">Investec vs RMB Private Account</a></li>
+          <li><a href="vs-discovery.html">Investec vs Discovery Purple Card</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="footer-copy">&copy; 2026 Bank Investec. All rights reserved.</div>
-      <div class="footer-legal">This site is independent and not affiliated with Investec Limited or FirstRand Group. RMB Private Bank data sourced from publicly available pricing guides (2025/2026). Verify all information directly with the respective bank before making a financial decision.</div>
+      <div class="footer-legal">This site is independent and not affiliated with Investec Limited or FirstRand Group. RMB Private Account data sourced from publicly available pricing guides (2025/2026). Verify all information directly with the respective bank before making a financial decision.</div>
     </div>
   </div>
 </footer>
 
 <script>
+  function trackApply() {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'conversion', {'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL'});
+    }
+  }
+  function updateThemeIcon() {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.getElementById('moonIcon').style.display = isDark ? 'none' : 'block';
+    document.getElementById('sunIcon').style.display = isDark ? 'block' : 'none';
+  }
+  function toggleTheme() {
+    var html = document.documentElement;
+    var isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? '' : 'dark');
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    updateThemeIcon();
+  }
+  (function() {
+    var savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme === 'dark' ? 'dark' : '');
+    updateThemeIcon();
+  })();
+  function toggleDropdown(e, id) {
+    e.stopPropagation();
+    var menu = document.getElementById(id);
+    var isOpen = menu.classList.contains('open');
+    document.querySelectorAll('.nav-dd-menu').forEach(function(m) { m.classList.remove('open'); });
+    if (!isOpen) menu.classList.add('open');
+  }
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.nav-dd-menu').forEach(function(m) { m.classList.remove('open'); });
+  });
   function toggleNav() {
-    const n = document.getElementById('mNav');
+    var n = document.getElementById('mNav');
     n.style.display = n.style.display === 'block' ? 'none' : 'block';
   }
 </script>
