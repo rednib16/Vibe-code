@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://script.google.com https://www.google-analytics.com https://analytics.google.com; img-src 'self' data: https:; frame-src 'none';">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Investec Private Banking Review 2026 | Is It Worth It? | Bank Investec</title>
   <meta name="description" content="Full independent review of Investec Private Banking South Africa. Fees from R675/month, 1,100+ airport lounges, multicurrency card. See if you qualify and apply today.">
   <meta property="og:title" content="Investec Private Banking Review 2026 | Is It Worth It? | Bank Investec">
@@ -816,6 +818,7 @@
     <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:10px;">Private banking insights, delivered quarterly</h2>
     <p style="color:var(--text-muted);margin-bottom:28px;line-height:1.75;max-width:520px;margin-left:auto;margin-right:auto;">Fee changes, new Investec benefits, and honest private banking analysis — straight to your inbox. No spam. Unsubscribe anytime.</p>
     <form id="subForm" onsubmit="submitEmail(event)" style="display:flex;gap:10px;max-width:480px;margin:0 auto;flex-wrap:wrap;">
+      <input type="text" id="subHoney" name="website" autocomplete="off" tabindex="-1" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true">
       <input type="email" id="subEmail" placeholder="your@email.com" required autocomplete="email" style="flex:1;min-width:200px;padding:13px 16px;border:1px solid var(--border);border-radius:8px;font-family:inherit;font-size:15px;color:var(--text);background:var(--card-bg);outline:none;transition:border-color .2s;min-height:48px;touch-action:manipulation;">
       <button type="submit" id="subBtn" class="btn btn-primary" style="white-space:nowrap;touch-action:manipulation;">Subscribe →</button>
     </form>
@@ -937,6 +940,7 @@
   var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx5r9lTDwfPNvMkEeVtLsD8Hnc1kCLFrBWn8XrvYQZQ9fWGxfoImcz69HI09oDyUrrT/exec';
   function submitEmail(e) {
     e.preventDefault();
+    if (document.getElementById('subHoney').value) return; // honeypot triggered
     var email = document.getElementById('subEmail').value.trim();
     if (!email) return;
     var btn = document.getElementById('subBtn');
