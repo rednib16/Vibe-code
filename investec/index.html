@@ -944,7 +944,7 @@
     btn.disabled = true;
     fetch(APPS_SCRIPT_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify({ email: email, source: 'bankinvestec.co.za', page: 'index' }),
       mode: 'no-cors'
     }).then(function() {

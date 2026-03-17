@@ -613,7 +613,7 @@
     var btn = document.getElementById('subBtn');
     btn.textContent = 'Sending…'; btn.disabled = true;
     fetch(APPS_SCRIPT_URL, {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      method: 'POST', headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify({ email: email, source: 'bankinvestec.co.za', page: 'vs-rmb' }),
       mode: 'no-cors'
     }).then(function() {
