@@ -257,7 +257,7 @@
           <svg id="moonIcon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
           <svg id="sunIcon" viewBox="0 0 24 24" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </button>
-        <a href="https://referrals.secure.investec.com/apply/FYmhJw" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:14px;padding:9px 20px;">Apply Now</a>
+        <a href="https://referrals.secure.investec.com/apply/FYmhJw" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:14px;padding:9px 20px;" onclick="trackApply()">Apply Now</a>
         <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -271,7 +271,7 @@
   <a href="index.html#features">Account &amp; Fees</a>
   <a href="vs-rmb.html">Investec vs RMB Private Account</a>
   <a href="vs-discovery.html">Investec vs Discovery Purple Card</a>
-  <a href="https://referrals.secure.investec.com/apply/FYmhJw" class="m-nav-cta" target="_blank" rel="noopener">Apply for Private Banking</a>
+  <a href="https://referrals.secure.investec.com/apply/FYmhJw" class="m-nav-cta" target="_blank" rel="noopener" onclick="trackApply()">Apply for Private Banking</a>
 </div>
 
 <!-- Page Hero -->
@@ -474,7 +474,7 @@
           <div class="who-item">Want or may need a UK private bank account as your financial position grows</div>
           <div class="who-item">Want to earn R3,750 per referral by introducing friends and colleagues to private banking</div>
         </div>
-        <a href="https://referrals.secure.investec.com/apply/FYmhJw" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:22px;width:100%;justify-content:center;">Apply for Investec</a>
+        <a href="https://referrals.secure.investec.com/apply/FYmhJw" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:22px;width:100%;justify-content:center;" onclick="trackApply()">Apply for Investec</a>
       </div>
       <div class="who-card disc">
         <h3>Consider <em>Discovery Purple Card</em> if you…</h3>
@@ -501,7 +501,7 @@
         <h2>Open your <em>Investec Private Bank Account</em></h2>
         <p>If you qualify, Investec offers an all-inclusive private banking experience with no spend conditions, no complex ecosystem requirements, and the industry's most recognised private banking service in SA.</p>
         <div class="cta-actions">
-          <a href="https://referrals.secure.investec.com/apply/FYmhJw" target="_blank" rel="noopener" class="btn btn-gold">Apply via Referral Link &rarr;</a>
+          <a href="https://referrals.secure.investec.com/apply/FYmhJw" target="_blank" rel="noopener" class="btn btn-gold" onclick="trackApply()">Apply via Referral Link &rarr;</a>
           <a href="vs-rmb.html" class="btn btn-outline">Compare vs RMB Private Account</a>
         </div>
         <p class="cta-disc">Not affiliated with Investec Limited or Discovery Limited. We may earn a referral reward when you apply via our link.</p>
@@ -531,7 +531,7 @@
 <div class="sticky-apply" id="stickyApply">
   <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;">
     <div style="font-size:14px;font-weight:600;color:rgba(255,255,255,.85);">Investec: R675/month all-inclusive &mdash; South Africa's #1 Private Bank</div>
-    <a href="https://referrals.secure.investec.com/apply/FYmhJw" target="_blank" rel="noopener" class="btn btn-gold" style="padding:10px 22px;font-size:14px;min-height:40px;">Apply Now &rarr;</a>
+    <a href="https://referrals.secure.investec.com/apply/FYmhJw" target="_blank" rel="noopener" class="btn btn-gold" style="padding:10px 22px;font-size:14px;min-height:40px;" onclick="trackApply('sticky_bar')">Apply Now &rarr;</a>
   </div>
 </div>
 
@@ -549,7 +549,7 @@
           <li><a href="index.html#review">Full Review</a></li>
           <li><a href="index.html#features">Account &amp; Fees</a></li>
           <li><a href="index.html#rewards">Rewards</a></li>
-          <li><a href="https://referrals.secure.investec.com/apply/FYmhJw" target="_blank" rel="noopener">Apply Now</a></li>
+          <li><a href="https://referrals.secure.investec.com/apply/FYmhJw" target="_blank" rel="noopener" onclick="trackApply()">Apply Now</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -632,6 +632,31 @@
       else if (shown && heroBottom >= 0) { bar.classList.remove('visible'); shown = false; }
     }, { passive: true });
   })();
+  function trackApply(label) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'apply_click', { event_category: 'cta', event_label: label || 'apply_now' });
+      gtag('event', 'conversion_event_outbound_click', { event_label: label || 'apply_now' });
+    }
+  }
+</script>
+
+<!-- Google tag (gtag.js) event - delayed navigation helper -->
+<script>
+  // Helper function to delay opening a URL until a gtag event is sent.
+  // Call it in response to an action that should navigate to a URL.
+  function gtagSendEvent(url) {
+    var callback = function () {
+      if (typeof url === 'string') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion_event_outbound_click', {
+      'event_callback': callback,
+      'event_timeout': 2000,
+      // <event_parameters>
+    });
+    return false;
+  }
 </script>
 </body>
 </html>

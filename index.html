@@ -884,6 +884,7 @@
   function trackApply(label) {
     if (typeof gtag !== 'undefined') {
       gtag('event', 'apply_click', { event_category: 'cta', event_label: label || 'apply_now' });
+      gtag('event', 'conversion_event_outbound_click', { event_label: label || 'apply_now' });
     }
   }
 
@@ -996,6 +997,25 @@
     var t = document.getElementById('toast');
     t.classList.add('show');
     setTimeout(function() { t.classList.remove('show'); }, 2800);
+  }
+</script>
+
+<!-- Google tag (gtag.js) event - delayed navigation helper -->
+<script>
+  // Helper function to delay opening a URL until a gtag event is sent.
+  // Call it in response to an action that should navigate to a URL.
+  function gtagSendEvent(url) {
+    var callback = function () {
+      if (typeof url === 'string') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion_event_outbound_click', {
+      'event_callback': callback,
+      'event_timeout': 2000,
+      // <event_parameters>
+    });
+    return false;
   }
 </script>
 </body>
