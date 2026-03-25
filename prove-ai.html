@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProveAI — AI Consulting for Small Business</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0A0F1E;
+      --surface:  #111827;
+      --border:   #1E2D4A;
+      --accent:   #2D7EF8;
+      --accent-h: #4D94FF;
+      --text:     #F0F4FF;
+      --muted:    #8B9FC4;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    /* ── Utilities */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 12px 24px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      animation: ctaPulse 3s ease-in-out infinite;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-h);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(45, 126, 248, 0.4);
+      animation: none;
+    }
+
+    @keyframes ctaPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(45, 126, 248, 0.45); }
+      50%       { box-shadow: 0 0 0 10px rgba(45, 126, 248, 0); }
+    }
+
+    /* ── Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 15, 30, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      gap: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .logo-mark { width: 34px; height: 34px; }
+
+    .logo-text {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .logo-text .ai { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta .btn-primary { animation: none; font-size: 0.875rem; padding: 10px 20px; }
+    .nav-cta .btn-primary:hover { box-shadow: 0 6px 20px rgba(45, 126, 248, 0.35); }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    /* ── Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 120px 0 108px;
+      text-align: center;
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 720px;
+      height: 480px;
+      background: radial-gradient(ellipse at center, rgba(45, 126, 248, 0.17) 0%, transparent 68%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--accent);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fadeUp 0.55s ease forwards 0.1s;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      letter-spacing: -0.035em;
+      max-width: 760px;
+      margin: 0 auto 24px;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fadeUp 0.55s ease forwards 0.25s;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 40px;
+      line-height: 1.75;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fadeUp 0.55s ease forwards 0.4s;
+    }
+
+    .hero-cta {
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fadeUp 0.55s ease forwards 0.55s;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Shared section styles */
+    section { padding: 100px 0; }
+
+    .section-label {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 480px;
+      line-height: 1.75;
+    }
+
+    /* ── How it works */
+    .how-it-works { border-top: 1px solid var(--border); }
+
+    .how-header { text-align: center; margin-bottom: 64px; }
+    .how-header .section-sub { margin: 0 auto; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 30px;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 30px rgba(45, 126, 248, 0.18), 0 6px 24px rgba(0,0,0,0.4);
+      transform: translateY(-5px);
+    }
+
+    .card-num {
+      font-family: 'Sora', sans-serif;
+      font-weight: 600;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.93rem;
+      line-height: 1.75;
+    }
+
+    /* ── About */
+    .about { border-top: 1px solid var(--border); }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .about-bio .section-title { margin-bottom: 22px; }
+
+    .about-bio p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .about-bio p:last-child { margin-bottom: 0; }
+
+    .about-right { display: flex; flex-direction: column; gap: 20px; }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 26px 30px;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    }
+
+    .stat-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 22px rgba(45, 126, 248, 0.14);
+      transform: translateY(-2px);
+    }
+
+    .stat-num {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label { color: var(--muted); font-size: 0.88rem; }
+
+    .quote-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 14px;
+      padding: 26px 30px;
+    }
+
+    .quote-card p {
+      color: var(--text);
+      font-size: 0.98rem;
+      line-height: 1.75;
+      font-style: italic;
+    }
+
+    /* ── Pricing */
+    .pricing { border-top: 1px solid var(--border); text-align: center; }
+
+    .pricing-header { margin-bottom: 52px; }
+    .pricing-header .section-sub { margin: 0 auto; }
+
+    .pricing-card {
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-h));
+    }
+
+    .pricing-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 44px rgba(45, 126, 248, 0.18);
+    }
+
+    .price-was {
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-decoration: line-through;
+      margin-bottom: 6px;
+    }
+
+    .price-main {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 3.4rem;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .price-desc {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 36px;
+    }
+
+    .price-items {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 36px;
+    }
+
+    .price-items li {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.93rem;
+      color: var(--muted);
+    }
+
+    .price-items li:last-child { border-bottom: none; }
+
+    .check-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      background: rgba(45, 126, 248, 0.13);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .check-icon svg { width: 11px; height: 11px; }
+
+    .price-items strong { color: var(--text); }
+
+    .pricing-cta {
+      width: 100%;
+      justify-content: center;
+      font-size: 1rem;
+      padding: 16px 24px;
+    }
+
+    /* ── FAQ */
+    .faq { border-top: 1px solid var(--border); }
+
+    .faq-header { text-align: center; margin-bottom: 52px; }
+
+    .faq-list { max-width: 700px; margin: 0 auto; }
+
+    .faq-item { border-bottom: 1px solid var(--border); }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 1rem;
+      text-align: left;
+      padding: 22px 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      transition: color 0.2s;
+    }
+
+    .faq-question:hover { color: var(--accent); }
+
+    .faq-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, transform 0.3s;
+    }
+
+    .faq-item.open .faq-icon {
+      border-color: var(--accent);
+      transform: rotate(45deg);
+    }
+
+    .faq-icon svg { width: 10px; height: 10px; }
+    .faq-icon svg path { stroke: var(--muted); stroke-width: 1.5; stroke-linecap: round; }
+    .faq-item.open .faq-icon svg path { stroke: var(--accent); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+
+    .faq-answer p {
+      color: var(--muted);
+      font-size: 0.93rem;
+      line-height: 1.8;
+      padding-bottom: 22px;
+    }
+
+    /* ── Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 72px 0 48px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .footer-tagline {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-copy {
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin-top: 8px;
+    }
+
+    /* ── Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+
+    /* ── Responsive */
+    @media (max-width: 820px) {
+      .cards { grid-template-columns: 1fr; }
+      .about-inner { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    @media (max-width: 680px) {
+      .nav-links { display: none; flex-direction: column; }
+      .nav-links.open {
+        display: flex;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        padding: 16px 24px 24px;
+        gap: 2px;
+      }
+      .nav-links.open li a { display: block; padding: 10px 0; font-size: 1rem; color: var(--text); }
+      .nav-toggle { display: flex; }
+      .hero { padding: 80px 0 72px; }
+      section { padding: 72px 0; }
+      .pricing-card { padding: 36px 24px; }
+      .price-main { font-size: 2.8rem; }
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 { font-size: 2rem; }
+      .section-title { font-size: 1.65rem; }
+      .nav-cta .btn-primary { font-size: 0.78rem; padding: 9px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="container nav-inner">
+
+    <a href="#" class="logo" aria-label="ProveAI">
+      <svg class="logo-mark" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="1" y="1" width="32" height="32" rx="6" stroke="#2D7EF8" stroke-width="2"/>
+        <path d="M9 17.5 L14.5 23 L25 11" stroke="#2D7EF8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="logo-text">Prove<span class="ai">AI</span></span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+    </ul>
+
+    <div class="nav-cta">
+      <a href="#book" class="btn-primary">Book a Free Discovery Call</a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="container">
+    <span class="eyebrow">AI Consulting for Small Business</span>
+    <h1>AI that works for<br>real businesses.</h1>
+    <p class="hero-sub">3 sessions. 1 real problem solved. You leave knowing exactly how to use AI in your business.</p>
+    <div class="hero-cta">
+      <a href="#book" class="btn-primary">
+        Book a Free Discovery Call
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+          <path d="M2.5 7.5h10M8.5 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works" id="how-it-works">
+  <div class="container">
+
+    <div class="how-header reveal">
+      <div class="section-label">The Process</div>
+      <h2 class="section-title">Three sessions. Real results.</h2>
+      <p class="section-sub">No fluff. No slides that go nowhere. Each session has a job to do.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card reveal reveal-d1">
+        <div class="card-num">Session 01</div>
+        <h3>AI tools tailored to your business</h3>
+        <p>We map your day-to-day and find the two or three places where AI will actually save you time. You get a clear, specific plan — not a general overview of what AI can do.</p>
+      </div>
+      <div class="card reveal reveal-d2">
+        <div class="card-num">Session 02</div>
+        <h3>We solve one real problem live</h3>
+        <p>We pick one task from your business and build an AI workflow around it together, in real time. You see exactly how it works — not a demo from someone else's company.</p>
+      </div>
+      <div class="card reveal reveal-d3">
+        <div class="card-num">Session 03</div>
+        <h3>Implementation and handover</h3>
+        <p>You get everything documented and handed over so you can run it yourself. No dependency on me after this. No retainer required unless you want one.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-inner">
+
+      <div class="about-bio reveal">
+        <div class="section-label">Who You're Working With</div>
+        <h2 class="section-title">Finance brain. AI tools. No jargon.</h2>
+        <p>I'm a CA(SA) with a Big 4 background and a decade in CFO roles for owner-operated businesses. I know what it's like to run lean — too much to do, not enough hours in the day.</p>
+        <p>A few years ago I went all-in on AI. Not because it's exciting, but because it works. I've cut real hours out of real workflows. Now I help other business owners do the same.</p>
+        <p>You won't get a PowerPoint deck. You'll get someone who knows your kind of business, rolls up their sleeves, and solves something real with you.</p>
+      </div>
+
+      <div class="about-right">
+        <div class="stat-card reveal reveal-d1">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Years in CFO and finance leadership roles</div>
+        </div>
+        <div class="stat-card reveal reveal-d2">
+          <div class="stat-num">Big 4</div>
+          <div class="stat-label">Professional background — CA(SA) qualified</div>
+        </div>
+        <div class="quote-card reveal reveal-d3">
+          <p>"I'm not selling AI. I'm showing you which parts of your day you can get back."</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="container">
+
+    <div class="pricing-header reveal">
+      <div class="section-label">Investment</div>
+      <h2 class="section-title">One price. Three sessions.</h2>
+      <p class="section-sub">Everything you need to get AI working in your business — without hiring a full-time expert.</p>
+    </div>
+
+    <div class="pricing-card reveal">
+      <p class="price-was">Sessions sold separately: $2,500</p>
+      <div class="price-main">$1,997</div>
+      <p class="price-desc">3-session bundle &mdash; USD, paid upfront</p>
+
+      <ul class="price-items">
+        <li>
+          <span class="check-icon">
+            <svg viewBox="0 0 11 11" fill="none" aria-hidden="true">
+              <path d="M2 5.5 L4.5 8 L9 3" stroke="#2D7EF8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span><strong>Session 1</strong> — AI tools mapped to your specific business</span>
+        </li>
+        <li>
+          <span class="check-icon">
+            <svg viewBox="0 0 11 11" fill="none" aria-hidden="true">
+              <path d="M2 5.5 L4.5 8 L9 3" stroke="#2D7EF8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span><strong>Session 2</strong> — Live problem-solving in your business</span>
+        </li>
+        <li>
+          <span class="check-icon">
+            <svg viewBox="0 0 11 11" fill="none" aria-hidden="true">
+              <path d="M2 5.5 L4.5 8 L9 3" stroke="#2D7EF8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span><strong>Session 3</strong> — Full handover, documented and ready to run</span>
+        </li>
+      </ul>
+
+      <a href="#book" class="btn-primary pricing-cta">
+        Book a Free Discovery Call
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+          <path d="M2.5 7.5h10M8.5 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+
+    <div class="faq-header reveal">
+      <div class="section-label">Questions</div>
+      <h2 class="section-title">Common questions</h2>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          What actually happens in each session?
+          <span class="faq-icon" aria-hidden="true">
+            <svg viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Session 1 is a 90-minute working call. We look at your business together — what you do, how you spend your time, and where the friction is. You leave with a prioritised list of AI opportunities specific to you. Session 2 is hands-on. We pick one task and build an AI workflow around it, live. Session 3 is handover — we document everything, make sure you can run it yourself, and talk through what to tackle next.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-d1">
+        <button class="faq-question" aria-expanded="false">
+          Is this right for my business?
+          <span class="faq-icon" aria-hidden="true">
+            <svg viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>If you run a business with fewer than 20 people and you're involved in the day-to-day, this is built for you. You don't need any technical background. You just need a specific problem — something that costs you real time every week. If you're not sure, the free discovery call is the right first step. No pressure either way.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-d2">
+        <button class="faq-question" aria-expanded="false">
+          Where are you based? Can we work remotely?
+          <span class="faq-icon" aria-hidden="true">
+            <svg viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>I'm based in South Africa and work with US-based businesses entirely online. All three sessions happen over video call. The time zone difference is manageable — early mornings cover the US East Coast well, and afternoons suit the West Coast. We'll find a time that works.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-d3">
+        <button class="faq-question" aria-expanded="false">
+          How do I book?
+          <span class="faq-icon" aria-hidden="true">
+            <svg viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Start with the free 30-minute discovery call using the booking link on this page. It's a no-pressure conversation. We'll talk about your business, what's taking up your time, and whether the 3-session bundle is the right fit. If it's not the right time, that's fine — I'd rather you book when it's useful.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          Do I have to keep paying after the three sessions?
+          <span class="faq-icon" aria-hidden="true">
+            <svg viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>No. The bundle is designed to leave you self-sufficient. At the end of Session 3 you'll have everything you need to run your AI workflows without any ongoing help from me. Some clients choose to continue working together — but that's entirely up to you and there's no pressure either way.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="book">
+  <div class="container">
+    <div class="footer-inner">
+
+      <a href="#" class="logo" aria-label="ProveAI">
+        <svg class="logo-mark" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="1" y="1" width="32" height="32" rx="6" stroke="#2D7EF8" stroke-width="2"/>
+          <path d="M9 17.5 L14.5 23 L25 11" stroke="#2D7EF8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo-text">Prove<span class="ai">AI</span></span>
+      </a>
+
+      <p class="footer-tagline">AI that works for real businesses.</p>
+
+      <!-- Calendly embed placeholder — replace the href with your Calendly URL -->
+      <a href="https://calendly.com/YOUR-LINK-HERE" target="_blank" rel="noopener noreferrer" class="btn-primary">
+        Book a Free Discovery Call
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+          <path d="M2.5 7.5h10M8.5 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+      <p class="footer-copy">&copy; 2026 ProveAI. All rights reserved.</p>
+
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  toggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+  });
+
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item   = btn.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.contains('open');
+
+      // Close all open items
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-answer').style.maxHeight = null;
+        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Scroll reveal via IntersectionObserver
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+
+  revealEls.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
