@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.bankreviewsza.co.za/sitemap.xml
+Sitemap: https://bankinvestec.co.za/sitemap.xml
